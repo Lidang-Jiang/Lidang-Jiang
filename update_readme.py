@@ -81,15 +81,23 @@ def group_by_repo(prs: list[dict]) -> dict[str, dict]:
     return dict(sorted(repos.items(), key=lambda x: x[1]["stars"], reverse=True))
 
 
+def format_stars(count: int) -> str:
+    """Format star count with K suffix for readability."""
+    if count >= 1000:
+        return f"{count / 1000:.1f}k"
+    return str(count)
+
+
 def generate_table(repos: dict[str, dict]) -> str:
     """Generate markdown table from grouped PRs."""
     lines = [
-        "| Repository | PRs Merged | Links |",
-        "|:-----------|:----------:|:------|",
+        "| Repository | Stars | PRs Merged | Links |",
+        "|:-----------|------:|:----------:|:------|",
     ]
 
     for name, info in repos.items():
         pr_count = len(info["prs"])
+        stars = format_stars(info["stars"])
         # Build PR links: show individual titles for repos with <= 3 PRs,
         # otherwise just show count with search link
         if pr_count <= 3:
@@ -105,7 +113,7 @@ def generate_table(repos: dict[str, dict]) -> str:
             pr_links = f"[View all]({search_url})"
 
         repo_link = f"[{name}]({info['url']})"
-        lines.append(f"| {repo_link} | {pr_count} | {pr_links} |")
+        lines.append(f"| {repo_link} | {stars} | {pr_count} | {pr_links} |")
 
     return "\n".join(lines)
 
