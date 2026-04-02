@@ -31,5 +31,6 @@ jobs:
           git add README.md
           if ! git diff --staged --quiet; then
             git commit -m "chore: update contributions"
+            git pull --rebase
             git push
           fi
