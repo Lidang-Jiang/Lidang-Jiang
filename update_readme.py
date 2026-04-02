@@ -14,7 +14,7 @@ GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 USERNAME = "Lidang-Jiang"
 README_PATH = Path(__file__).parent / "README.md"
 
-GRAPHQL_QUERY = """
+MERGED_PRS_QUERY = """
 query($cursor: String) {
   user(login: "%s") {
     pullRequests(
@@ -39,6 +39,16 @@ query($cursor: String) {
 }
 """ % USERNAME
 
+OPEN_PRS_QUERY = """
+{
+  user(login: "%s") {
+    pullRequests(first: 1, states: OPEN) {
+      totalCount
+    }
+  }
+}
+""" % USERNAME
+
 
 def fetch_merged_prs() -> list[dict]:
     """Fetch all merged PRs using GitHub GraphQL API with pagination."""
@@ -48,7 +58,7 @@ def fetch_merged_prs() -> list[dict]:
     while True:
         variables = json.dumps({"cursor": cursor})
         result = subprocess.run(
-            ["gh", "api", "graphql", "-f", f"query={GRAPHQL_QUERY}",
+            ["gh", "api", "graphql", "-f", f"query={MERGED_PRS_QUERY}",
              "-f", f"variables={variables}"],
             capture_output=True, text=True, check=True,
         )
@@ -61,6 +71,16 @@ def fetch_merged_prs() -> list[dict]:
         cursor = pr_data["pageInfo"]["endCursor"]
 
     return all_prs
+
+
+def fetch_open_pr_count() -> int:
+    """Fetch total count of open PRs."""
+    result = subprocess.run(
+        ["gh", "api", "graphql", "-f", f"query={OPEN_PRS_QUERY}"],
+        capture_output=True, text=True, check=True,
+    )
+    data = json.loads(result.stdout)
+    return data["data"]["user"]["pullRequests"]["totalCount"]
 
 
 def group_by_repo(prs: list[dict]) -> dict[str, dict]:
@@ -84,7 +104,7 @@ def group_by_repo(prs: list[dict]) -> dict[str, dict]:
 def format_stars(count: int) -> str:
     """Format star count with K suffix for readability."""
     if count >= 1000:
-        return f"{count / 1000:.1f}k"
+        return f"{count / 1000:.1f}k".replace(".0k", "k")
     return str(count)
 
 
@@ -118,25 +138,45 @@ def generate_table(repos: dict[str, dict]) -> str:
     return "\n".join(lines)
 
 
-def update_readme(table: str) -> None:
-    """Replace content between markers in README.md."""
-    readme = README_PATH.read_text(encoding="utf-8")
-    pattern = (
-        r"(<!-- START_SECTION:contributions -->)\n"
-        r".*?"
-        r"(<!-- END_SECTION:contributions -->)"
+def generate_summary(
+    total_prs: int, repo_count: int, total_stars: int, open_prs: int,
+) -> str:
+    """Generate summary line above the table."""
+    stars_str = format_stars(total_stars)
+    return (
+        f"> **{total_prs}** merged PRs across **{repo_count}** projects "
+        f"({stars_str}+ combined stars)"
+        f" · **{open_prs}** open PRs in review"
     )
-    replacement = f"\\1\n{table}\n\\2"
-    updated = re.sub(pattern, replacement, readme, flags=re.DOTALL)
-    README_PATH.write_text(updated, encoding="utf-8")
+
+
+def replace_section(readme: str, section: str, content: str) -> str:
+    """Replace content between START/END markers for a given section."""
+    pattern = (
+        rf"(<!-- START_SECTION:{section} -->)\n"
+        r".*?"
+        rf"(<!-- END_SECTION:{section} -->)"
+    )
+    return re.sub(pattern, rf"\1\n{content}\n\2", readme, flags=re.DOTALL)
+
+
+def update_readme(summary: str, table: str) -> None:
+    """Replace dynamic sections in README.md."""
+    readme = README_PATH.read_text(encoding="utf-8")
+    readme = replace_section(readme, "summary", summary)
+    readme = replace_section(readme, "contributions", table)
+    README_PATH.write_text(readme.rstrip() + "\n", encoding="utf-8")
 
 
 def main() -> None:
     prs = fetch_merged_prs()
+    open_prs = fetch_open_pr_count()
     repos = group_by_repo(prs)
+    total_stars = sum(info["stars"] for info in repos.values())
     table = generate_table(repos)
-    update_readme(table)
-    print(f"Updated README with {len(repos)} repositories, {len(prs)} merged PRs.")
+    summary = generate_summary(len(prs), len(repos), total_stars, open_prs)
+    update_readme(summary, table)
+    print(f"Updated README with {len(repos)} repositories, {len(prs)} merged PRs, {open_prs} open PRs.")
 
 
 if __name__ == "__main__":

@@ -11,11 +11,15 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 
 ### Open Source Contributions
 
+<!-- START_SECTION:summary -->
+> **19** merged PRs across **6** projects (327k+ combined stars) · **46** open PRs in review
+<!-- END_SECTION:summary -->
+
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 158.7k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 132.6k | 5 | [View all](https://github.com/affaan-m/everything-claude-code/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 132.7k | 5 | [View all](https://github.com/affaan-m/everything-claude-code/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
 | [Genesis-Embodied-AI/Genesis](https://github.com/Genesis-Embodied-AI/Genesis) | 28.4k | 3 | [#2612](https://github.com/Genesis-Embodied-AI/Genesis/pull/2612), [#2609](https://github.com/Genesis-Embodied-AI/Genesis/pull/2609), [#2610](https://github.com/Genesis-Embodied-AI/Genesis/pull/2610) |
 | [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 4.1k | 2 | [#2221](https://github.com/vllm-project/vllm-omni/pull/2221), [#1687](https://github.com/vllm-project/vllm-omni/pull/1687) |
 | [haosulab/ManiSkill](https://github.com/haosulab/ManiSkill) | 2.7k | 2 | [#1403](https://github.com/haosulab/ManiSkill/pull/1403), [#1402](https://github.com/haosulab/ManiSkill/pull/1402) |
@@ -34,4 +38,3 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/-Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-
