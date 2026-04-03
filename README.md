@@ -12,15 +12,17 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **19** merged PRs across **6** projects (328.6k+ combined stars) · **49** open PRs in review
+> **22** merged PRs across **8** projects (376.1k+ combined stars) · **51** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 158.7k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 134.3k | 5 | [View all](https://github.com/affaan-m/everything-claude-code/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
-| [Genesis-Embodied-AI/Genesis](https://github.com/Genesis-Embodied-AI/Genesis) | 28.4k | 3 | [#2612](https://github.com/Genesis-Embodied-AI/Genesis/pull/2612), [#2609](https://github.com/Genesis-Embodied-AI/Genesis/pull/2609), [#2610](https://github.com/Genesis-Embodied-AI/Genesis/pull/2610) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 135.2k | 5 | [View all](https://github.com/affaan-m/everything-claude-code/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
+| [docker/compose](https://github.com/docker/compose) | 37.2k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
+| [Genesis-Embodied-AI/Genesis](https://github.com/Genesis-Embodied-AI/Genesis) | 28.4k | 4 | [View all](https://github.com/Genesis-Embodied-AI/Genesis/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
+| [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 9.3k | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
 | [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 4.1k | 2 | [#2221](https://github.com/vllm-project/vllm-omni/pull/2221), [#1687](https://github.com/vllm-project/vllm-omni/pull/1687) |
 | [haosulab/ManiSkill](https://github.com/haosulab/ManiSkill) | 2.7k | 2 | [#1403](https://github.com/haosulab/ManiSkill/pull/1403), [#1402](https://github.com/haosulab/ManiSkill/pull/1402) |
 | [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 388 | 6 | [View all](https://github.com/baidu/vLLM-Kunlun/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
