@@ -12,14 +12,14 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **31** merged PRs across **11** projects (391.2k+ combined stars) · **67** open PRs in review
+> **31** merged PRs across **11** projects (391.7k+ combined stars) · **68** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 158.8k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 140k | 5 | [View all](https://github.com/affaan-m/everything-claude-code/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 140.5k | 5 | [View all](https://github.com/affaan-m/everything-claude-code/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
 | [docker/compose](https://github.com/docker/compose) | 37.2k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [Genesis-Embodied-AI/Genesis](https://github.com/Genesis-Embodied-AI/Genesis) | 28.4k | 6 | [View all](https://github.com/Genesis-Embodied-AI/Genesis/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 9.3k | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
