@@ -12,18 +12,19 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **36** merged PRs across **15** projects (432.2k+ combined stars) · **61** open PRs in review
+> **37** merged PRs across **16** projects (438.5k+ combined stars) · **60** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 159k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 145.3k | 5 | [View all](https://github.com/affaan-m/everything-claude-code/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 146k | 5 | [View all](https://github.com/affaan-m/everything-claude-code/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
 | [docker/compose](https://github.com/docker/compose) | 37.2k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [Genesis-Embodied-AI/Genesis](https://github.com/Genesis-Embodied-AI/Genesis) | 28.4k | 6 | [View all](https://github.com/Genesis-Embodied-AI/Genesis/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
-| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 25.5k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
+| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 25.6k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 9.3k | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
+| [open-edge-platform/anomalib](https://github.com/open-edge-platform/anomalib) | 5.6k | 1 | [#3512](https://github.com/open-edge-platform/anomalib/pull/3512) |
 | [rllm-org/rllm](https://github.com/rllm-org/rllm) | 5.4k | 1 | [#480](https://github.com/rllm-org/rllm/pull/480) |
 | [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 4.2k | 3 | [#2228](https://github.com/vllm-project/vllm-omni/pull/2228), [#2221](https://github.com/vllm-project/vllm-omni/pull/2221), [#1687](https://github.com/vllm-project/vllm-omni/pull/1687) |
 | [Lightning-AI/LitServe](https://github.com/Lightning-AI/LitServe) | 3.9k | 1 | [#674](https://github.com/Lightning-AI/LitServe/pull/674) |
