@@ -12,14 +12,14 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **37** merged PRs across **16** projects (439.1k+ combined stars) · **60** open PRs in review
+> **38** merged PRs across **17** projects (441.8k+ combined stars) · **59** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 159k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 146.6k | 5 | [View all](https://github.com/affaan-m/everything-claude-code/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 146.9k | 5 | [View all](https://github.com/affaan-m/everything-claude-code/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
 | [docker/compose](https://github.com/docker/compose) | 37.2k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [Genesis-Embodied-AI/Genesis](https://github.com/Genesis-Embodied-AI/Genesis) | 28.4k | 6 | [View all](https://github.com/Genesis-Embodied-AI/Genesis/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
 | [sgl-project/sglang](https://github.com/sgl-project/sglang) | 25.6k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
@@ -32,6 +32,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [Farama-Foundation/HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv) | 3.2k | 1 | [#668](https://github.com/Farama-Foundation/HighwayEnv/pull/668) |
 | [pytorch/ao](https://github.com/pytorch/ao) | 2.8k | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
 | [haosulab/ManiSkill](https://github.com/haosulab/ManiSkill) | 2.8k | 2 | [#1403](https://github.com/haosulab/ManiSkill/pull/1403), [#1402](https://github.com/haosulab/ManiSkill/pull/1402) |
+| [microsoft/Olive](https://github.com/microsoft/Olive) | 2.3k | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
 | [FreeOpcUa/opcua-asyncio](https://github.com/FreeOpcUa/opcua-asyncio) | 1.4k | 4 | [View all](https://github.com/FreeOpcUa/opcua-asyncio/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
 | [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 388 | 6 | [View all](https://github.com/baidu/vLLM-Kunlun/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
 <!-- END_SECTION:contributions -->
