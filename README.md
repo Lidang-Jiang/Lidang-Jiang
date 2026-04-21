@@ -12,17 +12,17 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **45** merged PRs across **20** projects (484k+ combined stars) · **61** open PRs in review
+> **47** merged PRs across **20** projects (484.3k+ combined stars) · **59** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 162.1k | 5 | [View all](https://github.com/affaan-m/everything-claude-code/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 162.4k | 5 | [View all](https://github.com/affaan-m/everything-claude-code/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 159.7k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [docker/compose](https://github.com/docker/compose) | 37.3k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [Genesis-Embodied-AI/Genesis](https://github.com/Genesis-Embodied-AI/Genesis) | 28.5k | 6 | [View all](https://github.com/Genesis-Embodied-AI/Genesis/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
-| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 26.1k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
+| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 26.2k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
 | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 11.8k | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 9.4k | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
 | [apify/crawlee-python](https://github.com/apify/crawlee-python) | 8.8k | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
@@ -37,7 +37,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [pytorch/ao](https://github.com/pytorch/ao) | 2.8k | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
 | [microsoft/Olive](https://github.com/microsoft/Olive) | 2.3k | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
 | [FreeOpcUa/opcua-asyncio](https://github.com/FreeOpcUa/opcua-asyncio) | 1.4k | 4 | [View all](https://github.com/FreeOpcUa/opcua-asyncio/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
-| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 397 | 6 | [View all](https://github.com/baidu/vLLM-Kunlun/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
+| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 397 | 8 | [View all](https://github.com/baidu/vLLM-Kunlun/pulls?q=is%3Apr+is%3Amerged+author%3ALidang-Jiang) |
 <!-- END_SECTION:contributions -->
 
 ---
