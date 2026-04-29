@@ -7,6 +7,7 @@ import re
 import subprocess
 import json
 from collections import defaultdict
+from html import escape
 from pathlib import Path
 
 
@@ -108,6 +109,27 @@ def format_stars(count: int) -> str:
     return str(count)
 
 
+def repo_anchor(name: str) -> str:
+    """Build a stable README anchor for a repository's PR details."""
+    slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+    return f"merged-prs-{slug}"
+
+
+def sorted_prs(info: dict) -> list[dict]:
+    """Return repository PRs in newest-merged-first order."""
+    return sorted(info["prs"], key=lambda p: p["mergedAt"], reverse=True)
+
+
+def pr_number(pr: dict) -> str:
+    """Extract the PR number from a pull request URL."""
+    return pr["url"].split("/")[-1]
+
+
+def markdown_text(text: str) -> str:
+    """Escape text that will be embedded in generated Markdown."""
+    return escape(text, quote=False).replace("|", "\\|")
+
+
 def generate_table(repos: dict[str, dict]) -> str:
     """Generate markdown table from grouped PRs."""
     lines = [
@@ -118,24 +140,46 @@ def generate_table(repos: dict[str, dict]) -> str:
     for name, info in repos.items():
         pr_count = len(info["prs"])
         stars = format_stars(info["stars"])
-        # Build PR links: show individual titles for repos with <= 3 PRs,
-        # otherwise just show count with search link
+        # Keep large rows compact, but link to generated details instead of
+        # GitHub search because search can omit older transferred PRs.
         if pr_count <= 3:
             pr_links = ", ".join(
-                f"[#{pr['url'].split('/')[-1]}]({pr['url']})"
-                for pr in sorted(info["prs"], key=lambda p: p["mergedAt"], reverse=True)
+                f"[#{pr_number(pr)}]({pr['url']})"
+                for pr in sorted_prs(info)
             )
         else:
-            search_url = (
-                f"https://github.com/{name}/pulls"
-                f"?q=is%3Apr+is%3Amerged+author%3A{USERNAME}"
-            )
-            pr_links = f"[View all]({search_url})"
+            pr_links = f"[View all](#{repo_anchor(name)})"
 
         repo_link = f"[{name}]({info['url']})"
         lines.append(f"| {repo_link} | {stars} | {pr_count} | {pr_links} |")
 
     return "\n".join(lines)
+
+
+def generate_pr_details(repos: dict[str, dict]) -> str:
+    """Generate complete PR details for repositories compacted in the table."""
+    detail_repos = [
+        (name, info)
+        for name, info in repos.items()
+        if len(info["prs"]) > 3
+    ]
+    if not detail_repos:
+        return ""
+
+    lines = ["### Merged PR Details", ""]
+    for name, info in detail_repos:
+        lines.extend([
+            f'<a id="{repo_anchor(name)}"></a>',
+            f"#### {markdown_text(name)} ({len(info['prs'])} merged PRs)",
+            "",
+        ])
+        for pr in sorted_prs(info):
+            lines.append(
+                f"- [#{pr_number(pr)}]({pr['url']}) - {markdown_text(pr['title'])}"
+            )
+        lines.append("")
+
+    return "\n".join(lines).rstrip()
 
 
 def generate_summary(
@@ -157,14 +201,37 @@ def replace_section(readme: str, section: str, content: str) -> str:
         r".*?"
         rf"(<!-- END_SECTION:{section} -->)"
     )
-    return re.sub(pattern, rf"\1\n{content}\n\2", readme, flags=re.DOTALL)
+    return re.sub(
+        pattern,
+        lambda match: f"{match.group(1)}\n{content}\n{match.group(2)}",
+        readme,
+        flags=re.DOTALL,
+    )
 
 
-def update_readme(summary: str, table: str) -> None:
+def upsert_section_after(
+    readme: str, section: str, content: str, after_section: str,
+) -> str:
+    """Replace a generated section or insert it after another generated section."""
+    start_marker = f"<!-- START_SECTION:{section} -->"
+    end_marker = f"<!-- END_SECTION:{after_section} -->"
+    block = f"{start_marker}\n{content}\n<!-- END_SECTION:{section} -->"
+
+    if start_marker in readme:
+        return replace_section(readme, section, content)
+    if end_marker not in readme:
+        raise RuntimeError(f"Missing marker: {end_marker}")
+    return readme.replace(end_marker, f"{end_marker}\n\n{block}", 1)
+
+
+def update_readme(summary: str, table: str, pr_details: str) -> None:
     """Replace dynamic sections in README.md."""
     readme = README_PATH.read_text(encoding="utf-8")
     readme = replace_section(readme, "summary", summary)
     readme = replace_section(readme, "contributions", table)
+    readme = upsert_section_after(
+        readme, "pr_details", pr_details, "contributions",
+    )
     README_PATH.write_text(readme.rstrip() + "\n", encoding="utf-8")
 
 
@@ -174,8 +241,9 @@ def main() -> None:
     repos = group_by_repo(prs)
     total_stars = sum(info["stars"] for info in repos.values())
     table = generate_table(repos)
+    pr_details = generate_pr_details(repos)
     summary = generate_summary(len(prs), len(repos), total_stars, open_prs)
-    update_readme(summary, table)
+    update_readme(summary, table, pr_details)
     print(f"Updated README with {len(repos)} repositories, {len(prs)} merged PRs, {open_prs} open PRs.")
 
 
