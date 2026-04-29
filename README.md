@@ -45,7 +45,8 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Merged PR Details
 
 <a id="merged-prs-affaan-m-everything-claude-code"></a>
-#### affaan-m/everything-claude-code (5 merged PRs)
+<details>
+<summary><strong>affaan-m/everything-claude-code (5 merged PRs)</strong></summary>
 
 - [#992](https://github.com/affaan-m/everything-claude-code/pull/992) - fix(hooks): port doc-file-warning denylist policy to current hook runtime
 - [#972](https://github.com/affaan-m/everything-claude-code/pull/972) - fix(observer): improve Windows compatibility for temp files and Haiku prompt
@@ -53,8 +54,11 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 - [#971](https://github.com/affaan-m/everything-claude-code/pull/971) - fix(codex): add startup_timeout_sec to MCP servers to prevent first-run timeouts
 - [#977](https://github.com/affaan-m/everything-claude-code/pull/977) - fix(scripts): add os.homedir() fallback for Windows compatibility
 
+</details>
+
 <a id="merged-prs-genesis-embodied-ai-genesis"></a>
-#### Genesis-Embodied-AI/Genesis (6 merged PRs)
+<details>
+<summary><strong>Genesis-Embodied-AI/Genesis (6 merged PRs)</strong></summary>
 
 - [#2653](https://github.com/Genesis-Embodied-AI/Genesis/pull/2653) - [BUG FIX] Fix GPU detection in test infrastructure for WSL2
 - [#2614](https://github.com/Genesis-Embodied-AI/Genesis/pull/2614) - [BUG FIX] Fix sensor camera 'lookat' being ignored when 'entity_idx' is set.
@@ -63,16 +67,22 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 - [#2609](https://github.com/Genesis-Embodied-AI/Genesis/pull/2609) - [MISC] Rename 'Drone.set_propellels_rpm' in 'Drone.set_propellers_rpm'.
 - [#2610](https://github.com/Genesis-Embodied-AI/Genesis/pull/2610) - [BUG FIX] Fix motion planning crashing for short path &lt; 3 nodes.
 
+</details>
+
 <a id="merged-prs-freeopcua-opcua-asyncio"></a>
-#### FreeOpcUa/opcua-asyncio (4 merged PRs)
+<details>
+<summary><strong>FreeOpcUa/opcua-asyncio (4 merged PRs)</strong></summary>
 
 - [#1956](https://github.com/FreeOpcUa/opcua-asyncio/pull/1956) - Fix PubSub UdpSettings key name case mismatch and TTL type check
 - [#1957](https://github.com/FreeOpcUa/opcua-asyncio/pull/1957) - Widen type annotations for reference methods to accept NodeId
 - [#1955](https://github.com/FreeOpcUa/opcua-asyncio/pull/1955) - Fix PubSub DataSetWriter sequence number uint16 overflow
 - [#1954](https://github.com/FreeOpcUa/opcua-asyncio/pull/1954) - Fix load_certificate/load_private_key ignoring explicit format argument
 
+</details>
+
 <a id="merged-prs-baidu-vllm-kunlun"></a>
-#### baidu/vLLM-Kunlun (9 merged PRs)
+<details>
+<summary><strong>baidu/vLLM-Kunlun (9 merged PRs)</strong></summary>
 
 - [#341](https://github.com/baidu/vLLM-Kunlun/pull/341) - [Doc] Fix XProfiler benchmark documentation typos
 - [#328](https://github.com/baidu/vLLM-Kunlun/pull/328) - [Doc] Clarify Docker image tags and pull checks
@@ -83,6 +93,8 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 - [#218](https://github.com/baidu/vLLM-Kunlun/pull/218) - [Misc] add collect_env feat
 - [#136](https://github.com/baidu/vLLM-Kunlun/pull/136) - [Doc] Optimize the document
 - [#108](https://github.com/baidu/vLLM-Kunlun/pull/108) - [Bug] Fix InternVL KeyError: ((1, 1, 3), '&lt;i8')
+
+</details>
 <!-- END_SECTION:pr_details -->
 
 ---

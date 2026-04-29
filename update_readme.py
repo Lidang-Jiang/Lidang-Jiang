@@ -170,14 +170,18 @@ def generate_pr_details(repos: dict[str, dict]) -> str:
     for name, info in detail_repos:
         lines.extend([
             f'<a id="{repo_anchor(name)}"></a>',
-            f"#### {markdown_text(name)} ({len(info['prs'])} merged PRs)",
+            "<details>",
+            (
+                f"<summary><strong>{markdown_text(name)} "
+                f"({len(info['prs'])} merged PRs)</strong></summary>"
+            ),
             "",
         ])
         for pr in sorted_prs(info):
             lines.append(
                 f"- [#{pr_number(pr)}]({pr['url']}) - {markdown_text(pr['title'])}"
             )
-        lines.append("")
+        lines.extend(["", "</details>", ""])
 
     return "\n".join(lines).rstrip()
 
@@ -244,7 +248,10 @@ def main() -> None:
     pr_details = generate_pr_details(repos)
     summary = generate_summary(len(prs), len(repos), total_stars, open_prs)
     update_readme(summary, table, pr_details)
-    print(f"Updated README with {len(repos)} repositories, {len(prs)} merged PRs, {open_prs} open PRs.")
+    print(
+        f"Updated README with {len(repos)} repositories, "
+        f"{len(prs)} merged PRs, {open_prs} open PRs."
+    )
 
 
 if __name__ == "__main__":
