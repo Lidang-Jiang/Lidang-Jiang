@@ -12,14 +12,14 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **49** merged PRs across **21** projects (858.9k+ combined stars) · **60** open PRs in review
+> **49** merged PRs across **21** projects (859k+ combined stars) · **60** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 366k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 169.6k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 366.1k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 169.7k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 160.1k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [docker/compose](https://github.com/docker/compose) | 37.3k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [Genesis-Embodied-AI/Genesis](https://github.com/Genesis-Embodied-AI/Genesis) | 28.6k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis) |
@@ -38,7 +38,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [pytorch/ao](https://github.com/pytorch/ao) | 2.8k | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
 | [microsoft/Olive](https://github.com/microsoft/Olive) | 2.3k | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
 | [FreeOpcUa/opcua-asyncio](https://github.com/FreeOpcUa/opcua-asyncio) | 1.4k | 4 | [View all](#merged-prs-freeopcua-opcua-asyncio) |
-| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 403 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
+| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 404 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
 <!-- END_SECTION:contributions -->
 
 <!-- START_SECTION:pr_details -->
@@ -84,6 +84,29 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 - [#136](https://github.com/baidu/vLLM-Kunlun/pull/136) - [Doc] Optimize the document
 - [#108](https://github.com/baidu/vLLM-Kunlun/pull/108) - [Bug] Fix InternVL KeyError: ((1, 1, 3), '&lt;i8')
 <!-- END_SECTION:pr_details -->
+
+---
+
+### Statistics
+
+<p align="center">
+  <a href="https://github.com/Lidang-Jiang">
+    <img height="180em" alt="Lidang Jiang's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=Lidang-Jiang&show_icons=true&theme=algolia&include_all_commits=true&count_private=true"/>
+  </a>
+  <a href="https://github.com/Lidang-Jiang">
+    <img height="180em" alt="Lidang Jiang's top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Lidang-Jiang&layout=compact&langs_count=8&theme=algolia"/>
+  </a>
+</p>
+
+<p align="center">
+  <img height="180em" alt="Lidang Jiang's GitHub streak" src="https://streak-stats.demolab.com/?user=Lidang-Jiang&theme=dark&hide_border=true"/>
+</p>
+
+<p align="center">
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img alt="Lidang Jiang's GitHub profile trophies" src="https://github-profile-trophy.vercel.app/?username=Lidang-Jiang&theme=radical&column=7"/>
+  </a>
+</p>
 
 ---
 
