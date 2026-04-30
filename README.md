@@ -98,7 +98,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 <!-- END_SECTION:pr_details -->
 
 ---
-
+<!-- 
 ### Statistics
 
 <p align="center">
@@ -120,7 +120,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
   </a>
 </p>
 
----
+--- -->
 
 ### Tech Stack
 
