@@ -12,14 +12,14 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **49** merged PRs across **21** projects (865.9k+ combined stars) · **60** open PRs in review
+> **49** merged PRs across **21** projects (866.2k+ combined stars) · **60** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 368.4k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 173.5k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 368.5k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 173.6k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 160.3k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [docker/compose](https://github.com/docker/compose) | 37.3k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 28.6k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
@@ -38,7 +38,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [pytorch/ao](https://github.com/pytorch/ao) | 2.8k | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
 | [microsoft/Olive](https://github.com/microsoft/Olive) | 2.3k | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
 | [FreeOpcUa/opcua-asyncio](https://github.com/FreeOpcUa/opcua-asyncio) | 1.4k | 4 | [View all](#merged-prs-freeopcua-opcua-asyncio) |
-| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 405 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
+| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 404 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
 <!-- END_SECTION:contributions -->
 
 <!-- START_SECTION:pr_details -->
