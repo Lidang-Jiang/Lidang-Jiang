@@ -12,17 +12,17 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **49** merged PRs across **21** projects (865.4k+ combined stars) · **60** open PRs in review
+> **49** merged PRs across **21** projects (865.6k+ combined stars) · **60** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 368.2k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 173.2k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 368.3k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 173.3k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 160.2k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [docker/compose](https://github.com/docker/compose) | 37.3k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
-| [Genesis-Embodied-AI/Genesis](https://github.com/Genesis-Embodied-AI/Genesis) | 28.6k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis) |
+| [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 28.6k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
 | [sgl-project/sglang](https://github.com/sgl-project/sglang) | 27k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
 | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 11.8k | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 9.4k | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
@@ -56,16 +56,16 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 
 </details>
 
-<a id="merged-prs-genesis-embodied-ai-genesis"></a>
+<a id="merged-prs-genesis-embodied-ai-genesis-world"></a>
 <details>
-<summary><strong>Genesis-Embodied-AI/Genesis (6 merged PRs)</strong></summary>
+<summary><strong>Genesis-Embodied-AI/genesis-world (6 merged PRs)</strong></summary>
 
-- [#2653](https://github.com/Genesis-Embodied-AI/Genesis/pull/2653) - [BUG FIX] Fix GPU detection in test infrastructure for WSL2
-- [#2614](https://github.com/Genesis-Embodied-AI/Genesis/pull/2614) - [BUG FIX] Fix sensor camera 'lookat' being ignored when 'entity_idx' is set.
-- [#2613](https://github.com/Genesis-Embodied-AI/Genesis/pull/2613) - [FEATURE] Add public API to RigidEntity for kinematic and potential energy.
-- [#2612](https://github.com/Genesis-Embodied-AI/Genesis/pull/2612) - [BUG FIX] Fix IK solver using wrong entity's DOFs for multi-robot scenes.
-- [#2609](https://github.com/Genesis-Embodied-AI/Genesis/pull/2609) - [MISC] Rename 'Drone.set_propellels_rpm' in 'Drone.set_propellers_rpm'.
-- [#2610](https://github.com/Genesis-Embodied-AI/Genesis/pull/2610) - [BUG FIX] Fix motion planning crashing for short path &lt; 3 nodes.
+- [#2653](https://github.com/Genesis-Embodied-AI/genesis-world/pull/2653) - [BUG FIX] Fix GPU detection in test infrastructure for WSL2
+- [#2614](https://github.com/Genesis-Embodied-AI/genesis-world/pull/2614) - [BUG FIX] Fix sensor camera 'lookat' being ignored when 'entity_idx' is set.
+- [#2613](https://github.com/Genesis-Embodied-AI/genesis-world/pull/2613) - [FEATURE] Add public API to RigidEntity for kinematic and potential energy.
+- [#2612](https://github.com/Genesis-Embodied-AI/genesis-world/pull/2612) - [BUG FIX] Fix IK solver using wrong entity's DOFs for multi-robot scenes.
+- [#2609](https://github.com/Genesis-Embodied-AI/genesis-world/pull/2609) - [MISC] Rename 'Drone.set_propellels_rpm' in 'Drone.set_propellers_rpm'.
+- [#2610](https://github.com/Genesis-Embodied-AI/genesis-world/pull/2610) - [BUG FIX] Fix motion planning crashing for short path &lt; 3 nodes.
 
 </details>
 
