@@ -12,14 +12,14 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **50** merged PRs across **22** projects (946.7k+ combined stars) · **63** open PRs in review
+> **51** merged PRs across **22** projects (947k+ combined stars) · **62** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 368.9k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 174.4k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 369k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 174.6k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 160.3k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 79.2k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 37.3k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
@@ -30,7 +30,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [apify/crawlee-python](https://github.com/apify/crawlee-python) | 8.9k | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
 | [open-edge-platform/anomalib](https://github.com/open-edge-platform/anomalib) | 5.7k | 3 | [#3509](https://github.com/open-edge-platform/anomalib/pull/3509), [#3508](https://github.com/open-edge-platform/anomalib/pull/3508), [#3512](https://github.com/open-edge-platform/anomalib/pull/3512) |
 | [rllm-org/rllm](https://github.com/rllm-org/rllm) | 5.5k | 1 | [#480](https://github.com/rllm-org/rllm/pull/480) |
-| [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 4.6k | 3 | [#2228](https://github.com/vllm-project/vllm-omni/pull/2228), [#2221](https://github.com/vllm-project/vllm-omni/pull/2221), [#1687](https://github.com/vllm-project/vllm-omni/pull/1687) |
+| [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 4.6k | 4 | [View all](#merged-prs-vllm-project-vllm-omni) |
 | [pytorch/executorch](https://github.com/pytorch/executorch) | 4.6k | 2 | [#18703](https://github.com/pytorch/executorch/pull/18703), [#18701](https://github.com/pytorch/executorch/pull/18701) |
 | [Lightning-AI/LitServe](https://github.com/Lightning-AI/LitServe) | 3.9k | 2 | [#673](https://github.com/Lightning-AI/LitServe/pull/673), [#674](https://github.com/Lightning-AI/LitServe/pull/674) |
 | [pytorch/rl](https://github.com/pytorch/rl) | 3.4k | 1 | [#3593](https://github.com/pytorch/rl/pull/3593) |
@@ -39,7 +39,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [pytorch/ao](https://github.com/pytorch/ao) | 2.8k | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
 | [microsoft/Olive](https://github.com/microsoft/Olive) | 2.3k | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
 | [FreeOpcUa/opcua-asyncio](https://github.com/FreeOpcUa/opcua-asyncio) | 1.4k | 4 | [View all](#merged-prs-freeopcua-opcua-asyncio) |
-| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 404 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
+| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 405 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
 <!-- END_SECTION:contributions -->
 
 <!-- START_SECTION:pr_details -->
@@ -67,6 +67,17 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 - [#2612](https://github.com/Genesis-Embodied-AI/genesis-world/pull/2612) - [BUG FIX] Fix IK solver using wrong entity's DOFs for multi-robot scenes.
 - [#2609](https://github.com/Genesis-Embodied-AI/genesis-world/pull/2609) - [MISC] Rename 'Drone.set_propellels_rpm' in 'Drone.set_propellers_rpm'.
 - [#2610](https://github.com/Genesis-Embodied-AI/genesis-world/pull/2610) - [BUG FIX] Fix motion planning crashing for short path &lt; 3 nodes.
+
+</details>
+
+<a id="merged-prs-vllm-project-vllm-omni"></a>
+<details>
+<summary><strong>vllm-project/vllm-omni (4 merged PRs)</strong></summary>
+
+- [#1636](https://github.com/vllm-project/vllm-omni/pull/1636) - [Bugfix] Fix missing ANSI colors in CLI logo when output is piped
+- [#2228](https://github.com/vllm-project/vllm-omni/pull/2228) - [Cleanup] Replace bare print() with logger and use specific exception types
+- [#2221](https://github.com/vllm-project/vllm-omni/pull/2221) - [Misc] Make gradio an optional dependency and upgrade to &gt;=6.7.0
+- [#1687](https://github.com/vllm-project/vllm-omni/pull/1687) - [BugFix] Return proper HTTP status for ErrorResponse in create_speech
 
 </details>
 
