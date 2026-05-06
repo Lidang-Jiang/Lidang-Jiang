@@ -12,14 +12,14 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **50** merged PRs across **22** projects (945.8k+ combined stars) · **59** open PRs in review
+> **50** merged PRs across **22** projects (946.3k+ combined stars) · **63** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 368.6k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 173.9k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 368.8k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 174.2k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 160.3k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 79.1k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 37.3k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
