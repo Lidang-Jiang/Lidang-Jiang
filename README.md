@@ -12,19 +12,19 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **51** merged PRs across **22** projects (947.2k+ combined stars) · **62** open PRs in review
+> **51** merged PRs across **22** projects (947.7k+ combined stars) · **62** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 369.1k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 174.7k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 369.2k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 174.9k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 160.3k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 79.2k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 37.3k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
-| [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 28.6k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
-| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 27.1k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
+| [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 28.7k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
+| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 27.2k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
 | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 11.8k | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 9.5k | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
 | [apify/crawlee-python](https://github.com/apify/crawlee-python) | 8.9k | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
@@ -39,7 +39,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [pytorch/ao](https://github.com/pytorch/ao) | 2.8k | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
 | [microsoft/Olive](https://github.com/microsoft/Olive) | 2.3k | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
 | [FreeOpcUa/opcua-asyncio](https://github.com/FreeOpcUa/opcua-asyncio) | 1.4k | 4 | [View all](#merged-prs-freeopcua-opcua-asyncio) |
-| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 405 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
+| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 406 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
 <!-- END_SECTION:contributions -->
 
 <!-- START_SECTION:pr_details -->
