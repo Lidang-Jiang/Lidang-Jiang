@@ -12,13 +12,13 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **51** merged PRs across **22** projects (948.4k+ combined stars) · **62** open PRs in review
+> **51** merged PRs across **22** projects (948.6k+ combined stars) · **62** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 369.4k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 369.5k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
 | [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 175.3k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 160.4k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 79.3k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
