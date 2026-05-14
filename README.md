@@ -12,14 +12,14 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **53** merged PRs across **23** projects (959.7k+ combined stars) · **59** open PRs in review
+> **53** merged PRs across **23** projects (960.1k+ combined stars) · **59** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 371.8k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 181.9k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 371.9k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 182.1k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 160.6k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 80k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 37.4k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
@@ -30,11 +30,11 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [apify/crawlee-python](https://github.com/apify/crawlee-python) | 9k | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
 | [open-edge-platform/anomalib](https://github.com/open-edge-platform/anomalib) | 5.7k | 3 | [#3509](https://github.com/open-edge-platform/anomalib/pull/3509), [#3508](https://github.com/open-edge-platform/anomalib/pull/3508), [#3512](https://github.com/open-edge-platform/anomalib/pull/3512) |
 | [rllm-org/rllm](https://github.com/rllm-org/rllm) | 5.5k | 1 | [#480](https://github.com/rllm-org/rllm/pull/480) |
-| [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 4.7k | 4 | [View all](#merged-prs-vllm-project-vllm-omni) |
+| [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 4.8k | 4 | [View all](#merged-prs-vllm-project-vllm-omni) |
 | [pytorch/executorch](https://github.com/pytorch/executorch) | 4.6k | 3 | [#18700](https://github.com/pytorch/executorch/pull/18700), [#18703](https://github.com/pytorch/executorch/pull/18703), [#18701](https://github.com/pytorch/executorch/pull/18701) |
 | [Lightning-AI/LitServe](https://github.com/Lightning-AI/LitServe) | 3.9k | 2 | [#673](https://github.com/Lightning-AI/LitServe/pull/673), [#674](https://github.com/Lightning-AI/LitServe/pull/674) |
 | [pytorch/rl](https://github.com/pytorch/rl) | 3.4k | 1 | [#3593](https://github.com/pytorch/rl/pull/3593) |
-| [Farama-Foundation/HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv) | 3.2k | 1 | [#668](https://github.com/Farama-Foundation/HighwayEnv/pull/668) |
+| [Farama-Foundation/HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv) | 3.3k | 1 | [#668](https://github.com/Farama-Foundation/HighwayEnv/pull/668) |
 | [haosulab/ManiSkill](https://github.com/haosulab/ManiSkill) | 2.9k | 2 | [#1403](https://github.com/haosulab/ManiSkill/pull/1403), [#1402](https://github.com/haosulab/ManiSkill/pull/1402) |
 | [pytorch/ao](https://github.com/pytorch/ao) | 2.8k | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
 | [microsoft/Olive](https://github.com/microsoft/Olive) | 2.3k | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
