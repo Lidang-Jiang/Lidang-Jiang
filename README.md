@@ -12,16 +12,16 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **53** merged PRs across **23** projects (966k+ combined stars) · **58** open PRs in review
+> **53** merged PRs across **23** projects (966.3k+ combined stars) · **58** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 372.9k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 186.3k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 186.4k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 160.7k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
-| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 80.3k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
+| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 80.4k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 37.4k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 28.8k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
 | [sgl-project/sglang](https://github.com/sgl-project/sglang) | 28k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
