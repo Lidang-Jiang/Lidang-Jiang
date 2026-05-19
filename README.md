@@ -12,15 +12,15 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **53** merged PRs across **23** projects (966.5k+ combined stars) · **58** open PRs in review
+> **53** merged PRs across **23** projects (967k+ combined stars) · **58** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 373k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 186.6k | 5 | [View all](#merged-prs-affaan-m-everything-claude-code) |
-| [huggingface/transformers](https://github.com/huggingface/transformers) | 160.7k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 373.1k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 186.8k | 5 | [View all](#merged-prs-affaan-m-ecc) |
+| [huggingface/transformers](https://github.com/huggingface/transformers) | 160.8k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 80.4k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 37.4k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 28.8k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
@@ -28,7 +28,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 11.9k | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 9.5k | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
 | [apify/crawlee-python](https://github.com/apify/crawlee-python) | 9.1k | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
-| [open-edge-platform/anomalib](https://github.com/open-edge-platform/anomalib) | 5.7k | 3 | [#3509](https://github.com/open-edge-platform/anomalib/pull/3509), [#3508](https://github.com/open-edge-platform/anomalib/pull/3508), [#3512](https://github.com/open-edge-platform/anomalib/pull/3512) |
+| [open-edge-platform/anomalib](https://github.com/open-edge-platform/anomalib) | 5.8k | 3 | [#3509](https://github.com/open-edge-platform/anomalib/pull/3509), [#3508](https://github.com/open-edge-platform/anomalib/pull/3508), [#3512](https://github.com/open-edge-platform/anomalib/pull/3512) |
 | [rllm-org/rllm](https://github.com/rllm-org/rllm) | 5.5k | 1 | [#480](https://github.com/rllm-org/rllm/pull/480) |
 | [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 4.8k | 4 | [View all](#merged-prs-vllm-project-vllm-omni) |
 | [pytorch/executorch](https://github.com/pytorch/executorch) | 4.6k | 3 | [#18700](https://github.com/pytorch/executorch/pull/18700), [#18703](https://github.com/pytorch/executorch/pull/18703), [#18701](https://github.com/pytorch/executorch/pull/18701) |
@@ -39,22 +39,22 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [pytorch/ao](https://github.com/pytorch/ao) | 2.8k | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
 | [microsoft/Olive](https://github.com/microsoft/Olive) | 2.3k | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
 | [FreeOpcUa/opcua-asyncio](https://github.com/FreeOpcUa/opcua-asyncio) | 1.4k | 4 | [View all](#merged-prs-freeopcua-opcua-asyncio) |
-| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 414 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
+| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 415 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
 | [ros2/launch_ros](https://github.com/ros2/launch_ros) | 79 | 1 | [#538](https://github.com/ros2/launch_ros/pull/538) |
 <!-- END_SECTION:contributions -->
 
 <!-- START_SECTION:pr_details -->
 ### Merged PR Details
 
-<a id="merged-prs-affaan-m-everything-claude-code"></a>
+<a id="merged-prs-affaan-m-ecc"></a>
 <details>
-<summary><strong>affaan-m/everything-claude-code (5 merged PRs)</strong></summary>
+<summary><strong>affaan-m/ECC (5 merged PRs)</strong></summary>
 
-- [#992](https://github.com/affaan-m/everything-claude-code/pull/992) - fix(hooks): port doc-file-warning denylist policy to current hook runtime
-- [#972](https://github.com/affaan-m/everything-claude-code/pull/972) - fix(observer): improve Windows compatibility for temp files and Haiku prompt
-- [#974](https://github.com/affaan-m/everything-claude-code/pull/974) - fix(codex): add persistent_instructions to baseline and relax sanity check
-- [#971](https://github.com/affaan-m/everything-claude-code/pull/971) - fix(codex): add startup_timeout_sec to MCP servers to prevent first-run timeouts
-- [#977](https://github.com/affaan-m/everything-claude-code/pull/977) - fix(scripts): add os.homedir() fallback for Windows compatibility
+- [#992](https://github.com/affaan-m/ECC/pull/992) - fix(hooks): port doc-file-warning denylist policy to current hook runtime
+- [#972](https://github.com/affaan-m/ECC/pull/972) - fix(observer): improve Windows compatibility for temp files and Haiku prompt
+- [#974](https://github.com/affaan-m/ECC/pull/974) - fix(codex): add persistent_instructions to baseline and relax sanity check
+- [#971](https://github.com/affaan-m/ECC/pull/971) - fix(codex): add startup_timeout_sec to MCP servers to prevent first-run timeouts
+- [#977](https://github.com/affaan-m/ECC/pull/977) - fix(scripts): add os.homedir() fallback for Windows compatibility
 
 </details>
 
