@@ -12,26 +12,26 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **54** merged PRs across **24** projects (1001.3k+ combined stars) · **53** open PRs in review
+> **54** merged PRs across **24** projects (1001.7k+ combined stars) · **53** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 375.7k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 199.3k | 5 | [View all](#merged-prs-affaan-m-ecc) |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 199.6k | 5 | [View all](#merged-prs-affaan-m-ecc) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 161.1k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
-| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 81.4k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
+| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 81.5k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 37.4k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 29.1k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
 | [sgl-project/sglang](https://github.com/sgl-project/sglang) | 28.5k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
-| [modelscope/FunASR](https://github.com/modelscope/FunASR) | 16.6k | 1 | [#2840](https://github.com/modelscope/FunASR/pull/2840) |
+| [modelscope/FunASR](https://github.com/modelscope/FunASR) | 16.7k | 1 | [#2840](https://github.com/modelscope/FunASR/pull/2840) |
 | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 12k | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 9.6k | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
 | [apify/crawlee-python](https://github.com/apify/crawlee-python) | 9.1k | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
 | [open-edge-platform/anomalib](https://github.com/open-edge-platform/anomalib) | 5.8k | 3 | [#3509](https://github.com/open-edge-platform/anomalib/pull/3509), [#3508](https://github.com/open-edge-platform/anomalib/pull/3508), [#3512](https://github.com/open-edge-platform/anomalib/pull/3512) |
 | [rllm-org/rllm](https://github.com/rllm-org/rllm) | 5.6k | 1 | [#480](https://github.com/rllm-org/rllm/pull/480) |
-| [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 4.8k | 4 | [View all](#merged-prs-vllm-project-vllm-omni) |
+| [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 4.9k | 4 | [View all](#merged-prs-vllm-project-vllm-omni) |
 | [pytorch/executorch](https://github.com/pytorch/executorch) | 4.7k | 3 | [#18700](https://github.com/pytorch/executorch/pull/18700), [#18703](https://github.com/pytorch/executorch/pull/18703), [#18701](https://github.com/pytorch/executorch/pull/18701) |
 | [Lightning-AI/LitServe](https://github.com/Lightning-AI/LitServe) | 3.9k | 2 | [#673](https://github.com/Lightning-AI/LitServe/pull/673), [#674](https://github.com/Lightning-AI/LitServe/pull/674) |
 | [pytorch/rl](https://github.com/pytorch/rl) | 3.5k | 1 | [#3593](https://github.com/pytorch/rl/pull/3593) |
