@@ -12,14 +12,14 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **56** merged PRs across **26** projects (1153.5k+ combined stars) · **50** open PRs in review
+> **56** merged PRs across **26** projects (1153.6k+ combined stars) · **50** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 379.4k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 217.7k | 5 | [View all](#merged-prs-affaan-m-ecc) |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 217.8k | 5 | [View all](#merged-prs-affaan-m-ecc) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 161.7k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 123.1k | 1 | [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 83.3k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
@@ -41,7 +41,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [pytorch/ao](https://github.com/pytorch/ao) | 2.9k | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
 | [microsoft/Olive](https://github.com/microsoft/Olive) | 2.3k | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
 | [FreeOpcUa/opcua-asyncio](https://github.com/FreeOpcUa/opcua-asyncio) | 1.4k | 4 | [View all](#merged-prs-freeopcua-opcua-asyncio) |
-| [ros2/rclcpp](https://github.com/ros2/rclcpp) | 767 | 1 | [#3139](https://github.com/ros2/rclcpp/pull/3139) |
+| [ros2/rclcpp](https://github.com/ros2/rclcpp) | 768 | 1 | [#3139](https://github.com/ros2/rclcpp/pull/3139) |
 | [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 431 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
 | [ros2/launch_ros](https://github.com/ros2/launch_ros) | 80 | 1 | [#538](https://github.com/ros2/launch_ros/pull/538) |
 <!-- END_SECTION:contributions -->
