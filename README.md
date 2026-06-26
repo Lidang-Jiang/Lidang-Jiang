@@ -12,14 +12,14 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **57** merged PRs across **26** projects (1161.8k+ combined stars) · **47** open PRs in review
+> **57** merged PRs across **26** projects (1162k+ combined stars) · **47** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 380.5k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 222k | 5 | [View all](#merged-prs-affaan-m-ecc) |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 380.6k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 222.1k | 5 | [View all](#merged-prs-affaan-m-ecc) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 161.9k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 123.3k | 1 | [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 84.4k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
