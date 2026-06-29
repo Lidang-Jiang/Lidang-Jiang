@@ -12,19 +12,19 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **58** merged PRs across **26** projects (1164k+ combined stars) · **46** open PRs in review
+> **58** merged PRs across **26** projects (1164.3k+ combined stars) · **46** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 380.9k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 223.1k | 5 | [View all](#merged-prs-affaan-m-ecc) |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 223.2k | 5 | [View all](#merged-prs-affaan-m-ecc) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 162k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 123.5k | 2 | [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 84.7k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 37.7k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
-| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 29.7k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
+| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 29.8k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
 | [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 29.4k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
 | [modelscope/FunASR](https://github.com/modelscope/FunASR) | 18.7k | 1 | [#2840](https://github.com/modelscope/FunASR/pull/2840) |
 | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 12.1k | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
@@ -37,7 +37,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [Lightning-AI/LitServe](https://github.com/Lightning-AI/LitServe) | 3.9k | 2 | [#673](https://github.com/Lightning-AI/LitServe/pull/673), [#674](https://github.com/Lightning-AI/LitServe/pull/674) |
 | [pytorch/rl](https://github.com/pytorch/rl) | 3.5k | 1 | [#3593](https://github.com/pytorch/rl/pull/3593) |
 | [Farama-Foundation/HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv) | 3.3k | 2 | [#667](https://github.com/Farama-Foundation/HighwayEnv/pull/667), [#668](https://github.com/Farama-Foundation/HighwayEnv/pull/668) |
-| [mani-skill/ManiSkill](https://github.com/mani-skill/ManiSkill) | 3k | 2 | [#1403](https://github.com/mani-skill/ManiSkill/pull/1403), [#1402](https://github.com/mani-skill/ManiSkill/pull/1402) |
+| [mani-skill/ManiSkill](https://github.com/mani-skill/ManiSkill) | 3.1k | 2 | [#1403](https://github.com/mani-skill/ManiSkill/pull/1403), [#1402](https://github.com/mani-skill/ManiSkill/pull/1402) |
 | [pytorch/ao](https://github.com/pytorch/ao) | 2.9k | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
 | [microsoft/Olive](https://github.com/microsoft/Olive) | 2.3k | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
 | [FreeOpcUa/opcua-asyncio](https://github.com/FreeOpcUa/opcua-asyncio) | 1.4k | 4 | [View all](#merged-prs-freeopcua-opcua-asyncio) |
