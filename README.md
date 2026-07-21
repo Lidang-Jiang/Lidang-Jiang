@@ -12,7 +12,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **59** merged PRs across **26** projects (1181.7k+ combined stars) · **43** open PRs in review
+> **59** merged PRs across **26** projects (1181.9k+ combined stars) · **43** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
@@ -29,7 +29,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [modelscope/FunASR](https://github.com/modelscope/FunASR) | 19.4k | 1 | [#2840](https://github.com/modelscope/FunASR/pull/2840) |
 | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 12.2k | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 9.8k | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
-| [apify/crawlee-python](https://github.com/apify/crawlee-python) | 9.3k | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
+| [apify/crawlee-python](https://github.com/apify/crawlee-python) | 9.4k | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
 | [open-edge-platform/anomalib](https://github.com/open-edge-platform/anomalib) | 6k | 3 | [#3509](https://github.com/open-edge-platform/anomalib/pull/3509), [#3508](https://github.com/open-edge-platform/anomalib/pull/3508), [#3512](https://github.com/open-edge-platform/anomalib/pull/3512) |
 | [rllm-org/rllm](https://github.com/rllm-org/rllm) | 5.7k | 1 | [#480](https://github.com/rllm-org/rllm/pull/480) |
 | [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 5.6k | 4 | [View all](#merged-prs-vllm-project-vllm-omni) |
