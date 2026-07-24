@@ -12,14 +12,14 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **59** merged PRs across **26** projects (1183.5k+ combined stars) · **43** open PRs in review
+> **59** merged PRs across **26** projects (1183.7k+ combined stars) · **43** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 384k | 1 | [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 232.6k | 5 | [View all](#merged-prs-affaan-m-ecc) |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 232.7k | 5 | [View all](#merged-prs-affaan-m-ecc) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 162.9k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 123.9k | 3 | [#138082](https://github.com/kubernetes/kubernetes/pull/138082), [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 87k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
@@ -29,7 +29,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [modelscope/FunASR](https://github.com/modelscope/FunASR) | 19.4k | 1 | [#2840](https://github.com/modelscope/FunASR/pull/2840) |
 | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 12.2k | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 9.8k | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
-| [apify/crawlee-python](https://github.com/apify/crawlee-python) | 9.3k | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
+| [apify/crawlee-python](https://github.com/apify/crawlee-python) | 9.4k | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
 | [open-edge-platform/anomalib](https://github.com/open-edge-platform/anomalib) | 6k | 3 | [#3509](https://github.com/open-edge-platform/anomalib/pull/3509), [#3508](https://github.com/open-edge-platform/anomalib/pull/3508), [#3512](https://github.com/open-edge-platform/anomalib/pull/3512) |
 | [rllm-org/rllm](https://github.com/rllm-org/rllm) | 5.7k | 1 | [#480](https://github.com/rllm-org/rllm/pull/480) |
 | [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 5.7k | 4 | [View all](#merged-prs-vllm-project-vllm-omni) |
