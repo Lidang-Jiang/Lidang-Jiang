@@ -12,17 +12,17 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **60** merged PRs across **26** projects (1191.3k+ combined stars) · **42** open PRs in review
+> **60** merged PRs across **26** projects (1191.5k+ combined stars) · **42** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 384.9k | 2 | [#56720](https://github.com/openclaw/openclaw/pull/56720), [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 236.9k | 5 | [View all](#merged-prs-affaan-m-ecc) |
-| [huggingface/transformers](https://github.com/huggingface/transformers) | 163.2k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 237k | 5 | [View all](#merged-prs-affaan-m-ecc) |
+| [huggingface/transformers](https://github.com/huggingface/transformers) | 163.3k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 124.1k | 3 | [#138082](https://github.com/kubernetes/kubernetes/pull/138082), [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
-| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 87.9k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
+| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 88k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 37.9k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [sgl-project/sglang](https://github.com/sgl-project/sglang) | 31.1k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
 | [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 29.7k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
@@ -41,7 +41,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [pytorch/ao](https://github.com/pytorch/ao) | 2.9k | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
 | [microsoft/Olive](https://github.com/microsoft/Olive) | 2.4k | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
 | [FreeOpcUa/opcua-asyncio](https://github.com/FreeOpcUa/opcua-asyncio) | 1.5k | 4 | [View all](#merged-prs-freeopcua-opcua-asyncio) |
-| [ros2/rclcpp](https://github.com/ros2/rclcpp) | 783 | 1 | [#3139](https://github.com/ros2/rclcpp/pull/3139) |
+| [ros2/rclcpp](https://github.com/ros2/rclcpp) | 784 | 1 | [#3139](https://github.com/ros2/rclcpp/pull/3139) |
 | [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 457 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
 | [ros2/launch_ros](https://github.com/ros2/launch_ros) | 81 | 1 | [#538](https://github.com/ros2/launch_ros/pull/538) |
 <!-- END_SECTION:contributions -->
