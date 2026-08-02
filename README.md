@@ -12,7 +12,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **60** merged PRs across **26** projects (1191.2k+ combined stars) · **42** open PRs in review
+> **60** merged PRs across **26** projects (1191.3k+ combined stars) · **42** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
