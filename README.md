@@ -12,7 +12,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **60** merged PRs across **26** projects (1199.4k+ combined stars) · **39** open PRs in review
+> **60** merged PRs across **26** projects (1199.6k+ combined stars) · **39** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
@@ -24,7 +24,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 124.5k | 3 | [#138082](https://github.com/kubernetes/kubernetes/pull/138082), [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 89k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 38.1k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
-| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 31.7k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
+| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 31.8k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
 | [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 29.7k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
 | [modelscope/FunASR](https://github.com/modelscope/FunASR) | 19.8k | 1 | [#2840](https://github.com/modelscope/FunASR/pull/2840) |
 | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 12.3k | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
