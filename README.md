@@ -42,7 +42,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [microsoft/Olive](https://github.com/microsoft/Olive) | 2.4k | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
 | [FreeOpcUa/opcua-asyncio](https://github.com/FreeOpcUa/opcua-asyncio) | 1.5k | 4 | [View all](#merged-prs-freeopcua-opcua-asyncio) |
 | [ros2/rclcpp](https://github.com/ros2/rclcpp) | 790 | 1 | [#3139](https://github.com/ros2/rclcpp/pull/3139) |
-| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 447 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
+| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 448 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
 | [ros2/launch_ros](https://github.com/ros2/launch_ros) | 82 | 1 | [#538](https://github.com/ros2/launch_ros/pull/538) |
 <!-- END_SECTION:contributions -->
 
