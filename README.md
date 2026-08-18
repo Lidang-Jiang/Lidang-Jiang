@@ -12,17 +12,17 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **60** merged PRs across **26** projects (1202.1k+ combined stars) · **38** open PRs in review
+> **60** merged PRs across **26** projects (1202.2k+ combined stars) · **38** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 386.6k | 2 | [#56720](https://github.com/openclaw/openclaw/pull/56720), [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 240.8k | 5 | [View all](#merged-prs-affaan-m-ecc) |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 386.7k | 2 | [#56720](https://github.com/openclaw/openclaw/pull/56720), [#66285](https://github.com/openclaw/openclaw/pull/66285) |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 240.9k | 5 | [View all](#merged-prs-affaan-m-ecc) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 164.2k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 124.6k | 3 | [#138082](https://github.com/kubernetes/kubernetes/pull/138082), [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
-| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 89.3k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
+| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 89.4k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 38k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [sgl-project/sglang](https://github.com/sgl-project/sglang) | 32k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
 | [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 29.8k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
@@ -30,7 +30,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 12.3k | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 9.9k | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
 | [apify/crawlee-python](https://github.com/apify/crawlee-python) | 9.4k | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
-| [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 6.1k | 4 | [View all](#merged-prs-vllm-project-vllm-omni) |
+| [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 6.2k | 4 | [View all](#merged-prs-vllm-project-vllm-omni) |
 | [open-edge-platform/anomalib](https://github.com/open-edge-platform/anomalib) | 6.1k | 3 | [#3509](https://github.com/open-edge-platform/anomalib/pull/3509), [#3508](https://github.com/open-edge-platform/anomalib/pull/3508), [#3512](https://github.com/open-edge-platform/anomalib/pull/3512) |
 | [rllm-org/rllm](https://github.com/rllm-org/rllm) | 5.8k | 1 | [#480](https://github.com/rllm-org/rllm/pull/480) |
 | [pytorch/executorch](https://github.com/pytorch/executorch) | 4.9k | 3 | [#18700](https://github.com/pytorch/executorch/pull/18700), [#18703](https://github.com/pytorch/executorch/pull/18703), [#18701](https://github.com/pytorch/executorch/pull/18701) |
