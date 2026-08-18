@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
+import json
 import os
 import re
-import subprocess
-import json
+import subprocess  # nosec B404
+import sys
+import time
 from collections import defaultdict
 from html import escape
 from pathlib import Path
@@ -14,6 +16,8 @@ from pathlib import Path
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 USERNAME = "Lidang-Jiang"
 README_PATH = Path(__file__).parent / "README.md"
+GRAPHQL_MAX_ATTEMPTS = 3
+GRAPHQL_INITIAL_RETRY_DELAY_SECONDS = 2
 
 MERGED_PRS_QUERY = """
 query($cursor: String) {
@@ -51,19 +55,60 @@ OPEN_PRS_QUERY = """
 """ % USERNAME
 
 
+def _redact_token(message: str) -> str:
+    """Redact the active GitHub token from diagnostic output."""
+    if not GITHUB_TOKEN:
+        return message
+    return message.replace(GITHUB_TOKEN, "***")
+
+
+def _run_graphql(query: str, variables: dict | None = None) -> dict:
+    """Run a GitHub GraphQL query with bounded exponential backoff."""
+    command = ["gh", "api", "graphql", "-f", f"query={query}"]
+    if variables is not None:
+        command.extend(["-f", f"variables={json.dumps(variables)}"])
+
+    for attempt in range(1, GRAPHQL_MAX_ATTEMPTS + 1):
+        try:
+            # The command always starts with the fixed gh executable.
+            result = subprocess.run(  # nosec B603
+                command,
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+        except subprocess.CalledProcessError as error:
+            detail = _redact_token(
+                (error.stderr or "gh returned no error details").strip()
+            )
+            if attempt == GRAPHQL_MAX_ATTEMPTS:
+                raise RuntimeError(
+                    "GitHub GraphQL request failed after "
+                    f"{GRAPHQL_MAX_ATTEMPTS} attempts: {detail}"
+                ) from error
+
+            delay = GRAPHQL_INITIAL_RETRY_DELAY_SECONDS * 2 ** (attempt - 1)
+            print(
+                "GitHub GraphQL request failed on "
+                f"attempt {attempt}/{GRAPHQL_MAX_ATTEMPTS}: {detail}. "
+                f"Retrying in {delay} seconds.",
+                file=sys.stderr,
+            )
+            time.sleep(delay)
+            continue
+
+        return json.loads(result.stdout)
+
+    raise AssertionError("GraphQL retry loop exited unexpectedly")
+
+
 def fetch_merged_prs() -> list[dict]:
     """Fetch all merged PRs using GitHub GraphQL API with pagination."""
     all_prs: list[dict] = []
     cursor = None
 
     while True:
-        variables = json.dumps({"cursor": cursor})
-        result = subprocess.run(
-            ["gh", "api", "graphql", "-f", f"query={MERGED_PRS_QUERY}",
-             "-f", f"variables={variables}"],
-            capture_output=True, text=True, check=True,
-        )
-        data = json.loads(result.stdout)
+        data = _run_graphql(MERGED_PRS_QUERY, {"cursor": cursor})
         pr_data = data["data"]["user"]["pullRequests"]
         all_prs.extend(pr_data["nodes"])
 
@@ -76,11 +121,7 @@ def fetch_merged_prs() -> list[dict]:
 
 def fetch_open_pr_count() -> int:
     """Fetch total count of open PRs."""
-    result = subprocess.run(
-        ["gh", "api", "graphql", "-f", f"query={OPEN_PRS_QUERY}"],
-        capture_output=True, text=True, check=True,
-    )
-    data = json.loads(result.stdout)
+    data = _run_graphql(OPEN_PRS_QUERY)
     return data["data"]["user"]["pullRequests"]["totalCount"]
 
 

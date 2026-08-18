@@ -1,9 +1,12 @@
+import io
 import json
+import subprocess  # nosec B404
 import tempfile
 import unittest
+from contextlib import redirect_stderr
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import patch
+from unittest.mock import call, patch
 
 import update_readme
 from update_readme import (
@@ -48,6 +51,61 @@ def make_graphql_page(nodes: list[dict], has_next: bool, cursor: str | None) -> 
 
 
 class ReadmeGenerationTest(unittest.TestCase):
+    def test_fetch_merged_prs_retries_transient_graphql_failure(self) -> None:
+        failure = subprocess.CalledProcessError(
+            returncode=1,
+            cmd=["gh", "api", "graphql"],
+            stderr="temporary GraphQL failure",
+        )
+        response = make_graphql_page([{"title": "recovered"}], False, None)
+        stderr = io.StringIO()
+
+        with (
+            patch(
+                "update_readme.subprocess.run",
+                side_effect=[failure, response],
+            ) as run,
+            patch("update_readme.time.sleep") as sleep,
+            redirect_stderr(stderr),
+        ):
+            prs = fetch_merged_prs()
+
+        self.assertEqual([{"title": "recovered"}], prs)
+        self.assertEqual(2, run.call_count)
+        sleep.assert_called_once_with(2)
+        self.assertIn("attempt 1/3", stderr.getvalue())
+        self.assertIn("temporary GraphQL failure", stderr.getvalue())
+
+    def test_graphql_failure_reports_redacted_error_after_retries(self) -> None:
+        redaction_value = "not-a-real-credential"
+        failure = subprocess.CalledProcessError(
+            returncode=1,
+            cmd=["gh", "api", "graphql"],
+            stderr=f"request failed with token {redaction_value}",
+        )
+        stderr = io.StringIO()
+
+        with (
+            patch("update_readme.GITHUB_TOKEN", redaction_value),
+            patch(
+                "update_readme.subprocess.run",
+                side_effect=[failure, failure, failure],
+            ) as run,
+            patch("update_readme.time.sleep") as sleep,
+            redirect_stderr(stderr),
+            self.assertRaisesRegex(
+                RuntimeError,
+                "GitHub GraphQL request failed after 3 attempts",
+            ) as caught,
+        ):
+            fetch_open_pr_count()
+
+        self.assertEqual(3, run.call_count)
+        self.assertEqual([call(2), call(4)], sleep.call_args_list)
+        self.assertNotIn(redaction_value, str(caught.exception))
+        self.assertNotIn(redaction_value, stderr.getvalue())
+        self.assertIn("***", str(caught.exception))
+
     def test_fetch_merged_prs_uses_graphql_pagination(self) -> None:
         responses = [
             make_graphql_page([{"title": "first"}], True, "cursor-1"),
