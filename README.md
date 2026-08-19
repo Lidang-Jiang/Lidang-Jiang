@@ -12,7 +12,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **60** merged PRs across **26** projects (1202.8k+ combined stars) · **38** open PRs in review
+> **60** merged PRs across **26** projects (1202.9k+ combined stars) · **38** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
@@ -22,12 +22,12 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | 241.1k | 5 | [View all](#merged-prs-affaan-m-ecc) |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 164.3k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 124.6k | 3 | [#138082](https://github.com/kubernetes/kubernetes/pull/138082), [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
-| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 89.4k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
+| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 89.5k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 38k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [sgl-project/sglang](https://github.com/sgl-project/sglang) | 32.1k | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
 | [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 29.8k | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
 | [modelscope/FunASR](https://github.com/modelscope/FunASR) | 19.9k | 1 | [#2840](https://github.com/modelscope/FunASR/pull/2840) |
-| [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 12.3k | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
+| [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 12.4k | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 9.9k | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
 | [apify/crawlee-python](https://github.com/apify/crawlee-python) | 9.4k | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
 | [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 6.2k | 4 | [View all](#merged-prs-vllm-project-vllm-omni) |
