@@ -12,15 +12,15 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **60** merged PRs across **26** projects (1202.5k+ combined stars) · **38** open PRs in review
+> **60** merged PRs across **26** projects (1202.8k+ combined stars) · **38** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | PRs Merged | Links |
 |:-----------|------:|:----------:|:------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 386.7k | 2 | [#56720](https://github.com/openclaw/openclaw/pull/56720), [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 241k | 5 | [View all](#merged-prs-affaan-m-ecc) |
-| [huggingface/transformers](https://github.com/huggingface/transformers) | 164.2k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 386.8k | 2 | [#56720](https://github.com/openclaw/openclaw/pull/56720), [#66285](https://github.com/openclaw/openclaw/pull/66285) |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 241.1k | 5 | [View all](#merged-prs-affaan-m-ecc) |
+| [huggingface/transformers](https://github.com/huggingface/transformers) | 164.3k | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 124.6k | 3 | [#138082](https://github.com/kubernetes/kubernetes/pull/138082), [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 89.4k | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 38k | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
@@ -38,10 +38,10 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [pytorch/rl](https://github.com/pytorch/rl) | 3.5k | 1 | [#3593](https://github.com/pytorch/rl/pull/3593) |
 | [Farama-Foundation/HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv) | 3.3k | 2 | [#667](https://github.com/Farama-Foundation/HighwayEnv/pull/667), [#668](https://github.com/Farama-Foundation/HighwayEnv/pull/668) |
 | [mani-skill/ManiSkill](https://github.com/mani-skill/ManiSkill) | 3.2k | 2 | [#1403](https://github.com/mani-skill/ManiSkill/pull/1403), [#1402](https://github.com/mani-skill/ManiSkill/pull/1402) |
-| [pytorch/ao](https://github.com/pytorch/ao) | 2.9k | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
+| [pytorch/ao](https://github.com/pytorch/ao) | 3k | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
 | [microsoft/Olive](https://github.com/microsoft/Olive) | 2.4k | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
 | [FreeOpcUa/opcua-asyncio](https://github.com/FreeOpcUa/opcua-asyncio) | 1.5k | 4 | [View all](#merged-prs-freeopcua-opcua-asyncio) |
-| [ros2/rclcpp](https://github.com/ros2/rclcpp) | 790 | 1 | [#3139](https://github.com/ros2/rclcpp/pull/3139) |
+| [ros2/rclcpp](https://github.com/ros2/rclcpp) | 791 | 1 | [#3139](https://github.com/ros2/rclcpp/pull/3139) |
 | [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 449 | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
 | [ros2/launch_ros](https://github.com/ros2/launch_ros) | 82 | 1 | [#538](https://github.com/ros2/launch_ros/pull/538) |
 <!-- END_SECTION:contributions -->
