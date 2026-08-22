@@ -12,20 +12,20 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **76** authored commits and **61** merged PRs across **28** external projects (1439.3k+ combined stars) · **37** open PRs in review
+> **76** authored commits and **61** merged PRs across **28** external projects (1439.7k+ combined stars) · **37** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | Authored Commits | Merged PRs | PR Links |
 |:-----------|------:|:----------------:|:----------:|:---------|
 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 387.1k | [1](https://github.com/openclaw/openclaw/commits?author=Lidang-Jiang) | 2 | [#56720](https://github.com/openclaw/openclaw/pull/56720), [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 242k | [14](https://github.com/affaan-m/ECC/commits?author=Lidang-Jiang) | 5 | [View all](#merged-prs-affaan-m-ecc) |
-| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 234.2k | [1](https://github.com/NousResearch/hermes-agent/commits?author=Lidang-Jiang) | 0 | — |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 242.1k | [14](https://github.com/affaan-m/ECC/commits?author=Lidang-Jiang) | 5 | [View all](#merged-prs-affaan-m-ecc) |
+| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 234.3k | [1](https://github.com/NousResearch/hermes-agent/commits?author=Lidang-Jiang) | 0 | — |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 164.3k | [1](https://github.com/huggingface/transformers/commits?author=Lidang-Jiang) | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 124.9k | [7](https://github.com/kubernetes/kubernetes/commits?author=Lidang-Jiang) | 3 | [#138082](https://github.com/kubernetes/kubernetes/pull/138082), [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 89.7k | [1](https://github.com/vllm-project/vllm/commits?author=Lidang-Jiang) | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 38k | [2](https://github.com/docker/compose/commits?author=Lidang-Jiang) | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
-| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 32.2k | [2](https://github.com/sgl-project/sglang/commits?author=Lidang-Jiang) | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
+| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 32.3k | [2](https://github.com/sgl-project/sglang/commits?author=Lidang-Jiang) | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
 | [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 29.8k | [6](https://github.com/Genesis-Embodied-AI/genesis-world/commits?author=Lidang-Jiang) | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
 | [modelscope/FunASR](https://github.com/modelscope/FunASR) | 20k | [1](https://github.com/modelscope/FunASR/commits?author=Lidang-Jiang) | 1 | [#2840](https://github.com/modelscope/FunASR/pull/2840) |
 | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 12.4k | [1](https://github.com/Farama-Foundation/Gymnasium/commits?author=Lidang-Jiang) | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
