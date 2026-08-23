@@ -761,14 +761,14 @@ class ReadmeGenerationTest(unittest.TestCase):
 
         write_readme.assert_called_once()
         summary, table, commit_details, pr_details = write_readme.call_args.args
-        self.assertIn("**3** authored commits", summary)
+        self.assertIn("**3** authored/co-authored commits", summary)
         self.assertIn("**1** merged PRs", summary)
         self.assertIn("(1.5k+ combined stars)", summary)
         self.assertIn("[#1](https://github.com/example/project/pull/1)", table)
         self.assertEqual("", commit_details)
         self.assertEqual("", pr_details)
         print_output.assert_called_once_with(
-            "Updated README with 1 repositories, 3 authored commits, "
+            "Updated README with 1 repositories, 3 authored/co-authored commits, "
             "1 merged PRs, 2 open PRs."
         )
 

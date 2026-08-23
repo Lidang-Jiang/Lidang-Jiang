@@ -108,7 +108,7 @@ def markdown_text(text: str) -> str:
 def generate_table(repos: dict[str, GroupedRepositoryInfo]) -> str:
     """Generate a Markdown table from grouped commits and PRs."""
     lines = [
-        "| Repository | Stars | Authored Commits | Merged PRs | PR Links |",
+        "| Repository | Stars | Authored / Co-authored Commits | Merged PRs | PR Links |",
         "|:-----------|------:|:----------------:|:----------:|:---------|",
     ]
 
@@ -171,7 +171,8 @@ def generate_commit_details(repos: dict[str, GroupedRepositoryInfo]) -> str:
                 "<details>",
                 (
                     f"<summary><strong>{html_text(name)} "
-                    f"({len(info['commits'])} authored commits)</strong></summary>"
+                    f"({len(info['commits'])} authored/co-authored commits)"
+                    "</strong></summary>"
                 ),
                 "",
             ]
@@ -228,7 +229,8 @@ def generate_summary(
 ) -> str:
     """Generate summary line above the table."""
     return (
-        f"> **{total_commits}** authored commits and **{total_prs}** merged PRs "
+        f"> **{total_commits}** authored/co-authored commits and "
+        f"**{total_prs}** merged PRs "
         f"across **{repo_count}** external projects "
         f"({format_stars(total_stars)}+ combined stars)"
         f" · **{open_prs}** open PRs in review"

@@ -26,6 +26,7 @@ class ReadmeRenderTest(unittest.TestCase):
 
         table = generate_table(repos)
 
+        self.assertIn("| Authored / Co-authored Commits |", table)
         self.assertIn("| 0 | — |", table)
         self.assertIn(
             "https://github.com/NousResearch/hermes-agent/commits/main"
@@ -43,7 +44,7 @@ class ReadmeRenderTest(unittest.TestCase):
         )
 
         self.assertEqual(
-            "> **75** authored commits and **49** merged PRs across "
+            "> **75** authored/co-authored commits and **49** merged PRs across "
             "**21** external projects "
             "(859k+ combined stars) · **60** open PRs in review",
             summary,

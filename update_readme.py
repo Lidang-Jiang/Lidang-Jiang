@@ -777,7 +777,7 @@ def main() -> None:
     update_readme(summary, table, commit_details, pr_details)
     print(
         f"Updated README with {len(repos)} repositories, "
-        f"{total_commits} authored commits, {total_prs} merged PRs, "
+        f"{total_commits} authored/co-authored commits, {total_prs} merged PRs, "
         f"{open_prs} open PRs."
     )
 

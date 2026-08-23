@@ -12,18 +12,18 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **77** authored commits and **61** merged PRs across **28** external projects (1440.2k+ combined stars) · **36** open PRs in review
+> **77** authored/co-authored commits and **61** merged PRs across **28** external projects (1440.2k+ combined stars) · **36** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
-| Repository | Stars | Authored Commits | Merged PRs | PR Links |
+| Repository | Stars | Authored / Co-authored Commits | Merged PRs | PR Links |
 |:-----------|------:|:----------------:|:----------:|:---------|
 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 387.2k | [2](https://github.com/openclaw/openclaw/commits/main?author=Lidang-Jiang) | 2 | [#56720](https://github.com/openclaw/openclaw/pull/56720), [#66285](https://github.com/openclaw/openclaw/pull/66285) |
 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | 242.3k | [14](https://github.com/affaan-m/ECC/commits/main?author=Lidang-Jiang) | 5 | [View all](#merged-prs-affaan-m-ecc) |
 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 234.5k | [1](https://github.com/NousResearch/hermes-agent/commits/main?author=Lidang-Jiang) | 0 | — |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 164.4k | [1](https://github.com/huggingface/transformers/commits/main?author=Lidang-Jiang) | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 124.9k | [7](https://github.com/kubernetes/kubernetes/commits/master?author=Lidang-Jiang) | 3 | [#138082](https://github.com/kubernetes/kubernetes/pull/138082), [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
-| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 89.7k | [1](https://github.com/vllm-project/vllm/commits/main?author=Lidang-Jiang) | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
+| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 89.8k | [1](https://github.com/vllm-project/vllm/commits/main?author=Lidang-Jiang) | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 38k | [2](https://github.com/docker/compose/commits/main?author=Lidang-Jiang) | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [sgl-project/sglang](https://github.com/sgl-project/sglang) | 32.3k | [2](https://github.com/sgl-project/sglang/commits/main?author=Lidang-Jiang) | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
 | [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 29.8k | [6](https://github.com/Genesis-Embodied-AI/genesis-world/commits/main?author=Lidang-Jiang) | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
@@ -53,7 +53,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 
 <a id="authored-commits-vllm-project-vllm-omni"></a>
 <details>
-<summary><strong>vllm-project/vllm-omni (5 authored commits)</strong></summary>
+<summary><strong>vllm-project/vllm-omni (5 authored/co-authored commits)</strong></summary>
 
 - [168bea2](https://github.com/vllm-project/vllm-omni/commit/168bea2440f1a1bcd1451a385d5083d4d522178b) - \[Misc\] Make gradio an optional dependency and upgrade to &gt;=6\.7\.0 \(\#2221\) _(branches: main)_
 - [28c2200](https://github.com/vllm-project/vllm-omni/commit/28c2200b47c9ae8acb87ad761462fe20b7290db0) - \[BugFix\] Return proper HTTP status for ErrorResponse in create\_speech… _(branches: main)_
@@ -65,7 +65,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 
 <a id="authored-commits-farama-foundation-highwayenv"></a>
 <details>
-<summary><strong>Farama-Foundation/HighwayEnv (2 authored commits)</strong></summary>
+<summary><strong>Farama-Foundation/HighwayEnv (2 authored/co-authored commits)</strong></summary>
 
 - [4681fb5](https://github.com/Farama-Foundation/HighwayEnv/commit/4681fb58d1ee6bdde977d06d6af27c935422113f) - Fix SubprocVecEnv ConnectionResetError with forkserver/spawn \(\#668\) _(branches: main, master)_
 - [7990a02](https://github.com/Farama-Foundation/HighwayEnv/commit/7990a02e6765921205523b68b0c8562f32571385) - fix: extend Road\.neighbour\_vehicles to detecting vehicles on connecte… _(branches: main)_
@@ -74,7 +74,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 
 <a id="authored-commits-baidu-vllm-kunlun"></a>
 <details>
-<summary><strong>baidu/vLLM-Kunlun (8 authored commits)</strong></summary>
+<summary><strong>baidu/vLLM-Kunlun (8 authored/co-authored commits)</strong></summary>
 
 - [25f58b7](https://github.com/baidu/vLLM-Kunlun/commit/25f58b7d92f6883805a9f061e70e97c8accbff3e) - \[Doc\] Clarify Docker image tags and pull checks \(\#328\) _(branches: main, v0\.25\.1\-dev)_
 - [3090da1](https://github.com/baidu/vLLM-Kunlun/commit/3090da127e8dfd3b757cb51ceaec20be2148a39b) - \[Doc\] Fix XProfiler benchmark documentation typos \(\#341\) _(branches: main, v0\.25\.1\-dev)_
