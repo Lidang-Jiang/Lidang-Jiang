@@ -9,9 +9,37 @@ import subprocess  # nosec B404
 import sys
 import time
 from datetime import datetime, time as datetime_time, timedelta, timezone
-from html import escape
 from pathlib import Path
-from typing import Any, TypedDict
+from typing import Any, cast
+
+from contribution_types import (
+    AccountInfo,
+    AuthoredCommitInfo,
+    CommitRepositoryInfo,
+    PullRequestInfo,
+    RepositoryContribution,
+    RepositoryInfo,
+    RepositoryOwner,
+)
+from github_queries import (
+    ACCOUNT_QUERY,
+    BRANCH_COAUTHOR_HISTORY_QUERY,
+    BRANCH_HISTORY_QUERY,
+    COMMIT_CONTRIBUTIONS_QUERY,
+    MERGED_PRS_QUERY,
+    OBJECT_HISTORY_QUERY,
+    OPEN_PRS_QUERY,
+)
+from github_rest import is_commit_reachable, search_commits
+from readme_render import (
+    generate_commit_details,
+    generate_pr_details,
+    generate_summary,
+    generate_table,
+    group_by_repo,
+)
+from readme_sections import write_readme_sections
+from request_budget import consume_github_request
 
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
@@ -21,140 +49,10 @@ README_PATH = Path(__file__).parent / "README.md"
 GRAPHQL_MAX_ATTEMPTS = 3
 GRAPHQL_INITIAL_RETRY_DELAY_SECONDS = 2
 CONTRIBUTION_WINDOW_DAYS = 90
-MARKDOWN_PUNCTUATION = "\\`*_{}[]()#+-.!|>~$"
 UTC = timezone.utc
-
-
-class RepositoryOwner(TypedDict):
-    login: str
-
-
-class RepositoryInfo(TypedDict):
-    nameWithOwner: str
-    stargazerCount: int
-    url: str
-    visibility: str
-    owner: RepositoryOwner
-
-
-class PullRequestSummary(TypedDict):
-    title: str
-    url: str
-    mergedAt: str
-
-
-class PullRequestInfo(PullRequestSummary):
-    repository: RepositoryInfo
-
-
-class ContributionDay(TypedDict):
-    commitCount: int
-
-
-class ContributionPageInfo(TypedDict):
-    hasNextPage: bool
-
-
-class ContributionConnection(TypedDict):
-    nodes: list[ContributionDay]
-    pageInfo: ContributionPageInfo
-
-
-class RepositoryContribution(TypedDict):
-    repository: RepositoryInfo
-    contributions: ContributionConnection
-
-
-class CommitRepositoryInfo(TypedDict):
-    commits: int
-    stars: int
-    url: str
-
-
-class GroupedRepositoryInfo(CommitRepositoryInfo):
-    prs: list[PullRequestSummary]
-
-
-ACCOUNT_QUERY = (
-    """
-query {
-  user(login: "%s") {
-    createdAt
-  }
-}
-"""
-    % USERNAME
-)
-
-COMMIT_CONTRIBUTIONS_QUERY = (
-    """
-query($from: DateTime!, $to: DateTime!) {
-  user(login: "%s") {
-    contributionsCollection(from: $from, to: $to) {
-      totalCommitContributions
-      totalRepositoriesWithContributedCommits
-      commitContributionsByRepository(maxRepositories: 100) {
-        repository {
-          nameWithOwner
-          stargazerCount
-          url
-          visibility
-          owner { login }
-        }
-        contributions(first: 100) {
-          nodes { commitCount }
-          pageInfo { hasNextPage }
-        }
-      }
-    }
-  }
-}
-"""
-    % USERNAME
-)
-
-MERGED_PRS_QUERY = (
-    """
-query($cursor: String) {
-  user(login: "%s") {
-    pullRequests(
-      first: 100
-      states: MERGED
-      orderBy: {field: CREATED_AT, direction: DESC}
-      after: $cursor
-    ) {
-      pageInfo { hasNextPage endCursor }
-      nodes {
-        title
-        url
-        mergedAt
-        repository {
-          nameWithOwner
-          stargazerCount
-          url
-          visibility
-          owner { login }
-        }
-      }
-    }
-  }
-}
-"""
-    % USERNAME
-)
-
-OPEN_PRS_QUERY = (
-    """
-{
-  user(login: "%s") {
-    pullRequests(first: 1, states: OPEN) {
-      totalCount
-    }
-  }
-}
-"""
-    % USERNAME
-)
+KNOWN_PROFILE_EMAILS = {"lidangjiang@gmail.com"}
+MAX_COAUTHOR_CANDIDATES_PER_REPOSITORY = 25
+MAX_HISTORY_PAGES_PER_BRANCH = 100
 
 
 def _redact_token(message: str) -> str:
@@ -166,9 +64,7 @@ def _redact_token(message: str) -> str:
     return redacted
 
 
-def _run_graphql(
-    query: str, variables: dict[str, str | None] | None = None
-) -> dict[str, Any]:
+def _run_graphql(query: str, variables: dict[str, Any] | None = None) -> dict[str, Any]:
     """Run a GitHub GraphQL query with bounded exponential backoff."""
     command = ["gh", "api", "graphql", "-f", f"query={query}"]
     if variables is not None:
@@ -178,6 +74,7 @@ def _run_graphql(
             command.extend(["-F", f"{name}={value}"])
 
     for attempt in range(1, GRAPHQL_MAX_ATTEMPTS + 1):
+        consume_github_request(f"GitHub GraphQL attempt {attempt}")
         try:
             # The command always starts with the fixed gh executable.
             result = subprocess.run(  # nosec B603
@@ -206,7 +103,14 @@ def _run_graphql(
             time.sleep(delay)
             continue
 
-        return json.loads(result.stdout)
+        loaded_response: object = json.loads(result.stdout)
+        if not isinstance(loaded_response, dict):
+            raise RuntimeError("GitHub GraphQL response was not an object")
+        response = cast(dict[str, Any], loaded_response)
+        if response.get("errors"):
+            detail = _redact_token(json.dumps(response["errors"], ensure_ascii=False))
+            raise RuntimeError(f"GitHub GraphQL response contained errors: {detail}")
+        return response
 
     raise AssertionError("GraphQL retry loop exited unexpectedly")
 
@@ -247,13 +151,13 @@ def contribution_windows(
     return windows
 
 
-def _fetch_account_created_at() -> datetime:
-    """Return the GitHub account creation timestamp."""
+def _fetch_account_info() -> AccountInfo:
+    """Return the GitHub account ID and creation timestamp."""
     data = _run_graphql(ACCOUNT_QUERY)
     user = data.get("data", {}).get("user")
     if user is None:
         raise RuntimeError(f"GitHub user not found: {USERNAME}")
-    return _parse_github_datetime(user["createdAt"])
+    return cast(AccountInfo, user)
 
 
 def _repository_commit_count(contribution: RepositoryContribution) -> int:
@@ -285,7 +189,10 @@ def _fetch_commit_contribution_window(
         },
     )
     collection = data["data"]["user"]["contributionsCollection"]
-    contributions = collection["commitContributionsByRepository"]
+    contributions = cast(
+        list[RepositoryContribution],
+        collection["commitContributionsByRepository"],
+    )
     enumerated_total = sum(_repository_commit_count(item) for item in contributions)
     enumerated_repositories = len(contributions)
     has_more = any(
@@ -322,27 +229,492 @@ def _is_external_public_repository(repository: RepositoryInfo) -> bool:
     )
 
 
-def fetch_authored_commit_contributions(
-    now: datetime | None = None,
-) -> dict[str, CommitRepositoryInfo]:
-    """Fetch all public external default-branch commits authored by the user."""
-    ended_at = now or datetime.now(UTC)
-    started_at = _fetch_account_created_at()
-    repositories: dict[str, CommitRepositoryInfo] = {}
-
+def _discover_contribution_repositories(
+    started_at: datetime,
+    ended_at: datetime,
+) -> dict[str, RepositoryInfo]:
+    """Discover repositories from the contribution calendar without trusting counts."""
+    repositories: dict[str, RepositoryInfo] = {}
     for window in contribution_windows(started_at, ended_at):
         for contribution in _fetch_commit_contribution_window(*window):
             repository = contribution["repository"]
             if not _is_external_public_repository(repository):
                 continue
-            name = repository["nameWithOwner"]
-            previous = repositories.get(name)
-            previous_commits = previous["commits"] if previous is not None else 0
-            repositories[name] = {
-                "commits": previous_commits + _repository_commit_count(contribution),
-                "stars": repository["stargazerCount"],
-                "url": repository["url"],
+            repositories[repository["nameWithOwner"]] = repository
+
+    return repositories
+
+
+def _commit_has_user(commit: dict[str, Any]) -> bool:
+    """Return whether a commit's author list includes the profile user."""
+    authors = commit["authors"]
+    if authors["pageInfo"]["hasNextPage"]:
+        raise RuntimeError(f"Commit author list was truncated for {commit['oid']}")
+    return any(
+        (node.get("user") or {}).get("login", "").casefold() == USERNAME.casefold()
+        for node in authors["nodes"]
+    )
+
+
+def _commit_has_user_as_coauthor(commit: dict[str, Any]) -> bool:
+    """Return whether a real Co-authored-by trailer credits the profile user."""
+    if not _commit_has_user(commit):
+        return False
+    user_emails = {
+        node.get("email", "").casefold()
+        for node in commit["authors"]["nodes"]
+        if (node.get("user") or {}).get("login", "").casefold() == USERNAME.casefold()
+        and node.get("email")
+    }
+    return bool(user_emails & _coauthor_trailer_emails(commit.get("message", "")))
+
+
+def _coauthor_trailer_emails(message: str) -> set[str]:
+    """Extract case-folded emails from real Co-authored-by trailers."""
+    return {
+        match.group(1).casefold()
+        for match in re.finditer(
+            r"^Co-authored-by:.*<([^>]+)>\s*$",
+            message,
+            flags=re.IGNORECASE | re.MULTILINE,
+        )
+    }
+
+
+def _account_identity_emails(account: AccountInfo) -> set[str]:
+    """Return public and GitHub-generated emails that identify the profile user."""
+    emails = {email.casefold() for email in KNOWN_PROFILE_EMAILS}
+    emails.add(f"{USERNAME}@users.noreply.github.com".casefold())
+    database_id = account.get("databaseId")
+    if database_id is not None:
+        emails.add(f"{database_id}+{USERNAME}@users.noreply.github.com".casefold())
+    return emails
+
+
+def _next_page_cursor(
+    page_info: dict[str, Any],
+    seen_cursors: set[str],
+    context: str,
+) -> str | None:
+    """Return a progressing cursor, or None after the final page."""
+    if not page_info["hasNextPage"]:
+        return None
+    cursor = page_info.get("endCursor")
+    if not isinstance(cursor, str) or not cursor or cursor in seen_cursors:
+        raise RuntimeError(f"{context} is missing or repeated end cursor")
+    seen_cursors.add(cursor)
+    return cursor
+
+
+def _fetch_branch_authored_commits(
+    repository: RepositoryInfo,
+    branch: str,
+    author_id: str,
+) -> list[AuthoredCommitInfo] | None:
+    """Fetch every user-authored commit reachable from one upstream branch."""
+    owner, name = repository["nameWithOwner"].split("/", 1)
+    cursor = None
+    seen_cursors: set[str] = set()
+    commits: list[AuthoredCommitInfo] = []
+    page_count = 0
+
+    while True:
+        if page_count >= MAX_HISTORY_PAGES_PER_BRANCH:
+            raise RuntimeError(
+                "GitHub branch history exceeded the page budget for "
+                f"{repository['nameWithOwner']}:{branch}"
+            )
+        page_count += 1
+        data = _run_graphql(
+            BRANCH_HISTORY_QUERY,
+            {
+                "owner": owner,
+                "name": name,
+                "qualifiedRef": f"refs/heads/{branch}",
+                "authorId": author_id,
+                "cursor": cursor,
+            },
+        )
+        graph_repository = data["data"]["repository"]
+        if graph_repository is None:
+            raise RuntimeError(
+                f"GitHub repository not found: {repository['nameWithOwner']}"
+            )
+        ref = graph_repository["ref"]
+        if ref is None:
+            return None
+        target = ref["target"]
+        if target["__typename"] != "Commit":
+            raise RuntimeError(
+                f"GitHub branch target is not a commit: "
+                f"{repository['nameWithOwner']}:{branch}"
+            )
+
+        history = target["history"]
+        for commit in history["nodes"]:
+            converted = _to_authored_commit(commit, branch)
+            if converted is not None:
+                commits.append(converted)
+
+        next_cursor = _next_page_cursor(
+            history["pageInfo"],
+            seen_cursors,
+            f"GitHub branch history for {repository['nameWithOwner']}:{branch}",
+        )
+        if next_cursor is None:
+            return commits
+        cursor = next_cursor
+
+
+def _fetch_default_branch_coauthored_commits(
+    repository: RepositoryInfo,
+    branch: str,
+    account: AccountInfo,
+) -> list[AuthoredCommitInfo]:
+    """Find default-branch coauthor commits using repository-scoped search."""
+    identity_emails = _account_identity_emails(account)
+    context = f"coauthor search for {repository['nameWithOwner']}:{branch}"
+    commits: list[AuthoredCommitInfo] = []
+    candidate_oids: set[str] = set()
+
+    for item in search_commits(repository["nameWithOwner"], identity_emails):
+        oid = item.get("sha")
+        raw_commit = item.get("commit")
+        message = raw_commit.get("message") if isinstance(raw_commit, dict) else None
+        if not isinstance(oid, str) or not isinstance(message, str):
+            raise RuntimeError(f"GitHub commit search item was malformed: {context}")
+        if _coauthor_trailer_emails(message) & identity_emails:
+            candidate_oids.add(oid)
+
+    if len(candidate_oids) > MAX_COAUTHOR_CANDIDATES_PER_REPOSITORY:
+        raise RuntimeError(
+            f"GitHub coauthor search exceeded the candidate budget for {context}"
+        )
+
+    for oid in sorted(candidate_oids):
+        if not is_commit_reachable(repository["nameWithOwner"], branch, oid):
+            continue
+        history = _fetch_object_history(repository, oid, 1, context)
+        if len(history) != 1 or history[0]["oid"] != oid:
+            raise RuntimeError(f"GitHub commit search returned a stale OID: {context}")
+        converted = _to_authored_commit(history[0], branch)
+        if converted is not None and converted.get("coauthorOnly", False):
+            commits.append(converted)
+
+    return _deduplicate_commits(commits)
+
+
+def _fetch_nondefault_branch_coauthored_commits(
+    repository: RepositoryInfo,
+    branch: str,
+    account: AccountInfo,
+) -> list[AuthoredCommitInfo]:
+    """Scan complete non-default history since account creation for coauthors."""
+    owner, name = repository["nameWithOwner"].split("/", 1)
+    commits: list[AuthoredCommitInfo] = []
+    cursor = None
+    seen_cursors: set[str] = set()
+    page_count = 0
+
+    while True:
+        if page_count >= MAX_HISTORY_PAGES_PER_BRANCH:
+            raise RuntimeError(
+                "GitHub coauthor history exceeded the page budget for "
+                f"{repository['nameWithOwner']}:{branch}"
+            )
+        page_count += 1
+        data = _run_graphql(
+            BRANCH_COAUTHOR_HISTORY_QUERY,
+            {
+                "owner": owner,
+                "name": name,
+                "qualifiedRef": f"refs/heads/{branch}",
+                "since": _format_github_datetime(
+                    _parse_github_datetime(account["createdAt"])
+                ),
+                "cursor": cursor,
+            },
+        )
+        graph_repository = data["data"]["repository"]
+        if graph_repository is None:
+            raise RuntimeError(
+                f"GitHub repository not found: {repository['nameWithOwner']}"
+            )
+        ref = graph_repository["ref"]
+        if ref is None or ref["target"]["__typename"] != "Commit":
+            raise RuntimeError(
+                f"GitHub branch disappeared during history scan: "
+                f"{repository['nameWithOwner']}:{branch}"
+            )
+        history = ref["target"]["history"]
+        for raw_commit in history["nodes"]:
+            converted = _to_authored_commit(raw_commit, branch)
+            if converted is not None and converted.get("coauthorOnly", False):
+                commits.append(converted)
+        next_cursor = _next_page_cursor(
+            history["pageInfo"],
+            seen_cursors,
+            f"GitHub coauthor history for {repository['nameWithOwner']}:{branch}",
+        )
+        if next_cursor is None:
+            return _deduplicate_commits(commits)
+        cursor = next_cursor
+
+
+def _fetch_branch_coauthored_commits(
+    repository: RepositoryInfo,
+    branch: str,
+    account: AccountInfo,
+    *,
+    is_default_branch: bool,
+) -> list[AuthoredCommitInfo]:
+    """Find coauthor-only commits independently from contribution-day data."""
+    if is_default_branch:
+        return _fetch_default_branch_coauthored_commits(repository, branch, account)
+    return _fetch_nondefault_branch_coauthored_commits(repository, branch, account)
+
+
+def _to_authored_commit(
+    commit: dict[str, Any],
+    branch: str,
+    *,
+    reconstructed: bool = False,
+) -> AuthoredCommitInfo | None:
+    """Convert a GraphQL commit only when the profile user authored it."""
+    if commit["authors"]["pageInfo"]["hasNextPage"]:
+        raise RuntimeError(f"Commit author list was truncated for {commit['oid']}")
+    first_author = cast(dict[str, Any], next(iter(commit["authors"]["nodes"]), {}))
+    primary_login = (first_author.get("user") or {}).get("login", "")
+    coauthor_only = primary_login.casefold() != USERNAME.casefold()
+    if coauthor_only and not _commit_has_user_as_coauthor(commit):
+        return None
+    return {
+        "oid": commit["oid"],
+        "url": commit["url"],
+        "messageHeadline": commit["messageHeadline"],
+        "branches": [branch],
+        "coauthorOnly": coauthor_only,
+        "requiresDetail": reconstructed or coauthor_only,
+    }
+
+
+def _fetch_object_history(
+    repository: RepositoryInfo,
+    oid: str,
+    count: int,
+    context: str,
+) -> list[dict[str, Any]]:
+    """Fetch a fixed history prefix starting from one commit object."""
+    owner, name = repository["nameWithOwner"].split("/", 1)
+    data = _run_graphql(
+        OBJECT_HISTORY_QUERY,
+        {
+            "owner": owner,
+            "name": name,
+            "oid": oid,
+            "count": count,
+        },
+    )
+    graph_repository = data["data"]["repository"]
+    if graph_repository is None:
+        raise RuntimeError(
+            f"GitHub repository not found: {repository['nameWithOwner']}"
+        )
+    graph_object = graph_repository["object"]
+    if graph_object is None or graph_object["__typename"] != "Commit":
+        raise RuntimeError(f"Commit history object not found: {context}")
+    return cast(list[dict[str, Any]], graph_object["history"]["nodes"])
+
+
+def _fetch_merge_history(
+    pull_request: PullRequestInfo,
+    count: int,
+) -> list[dict[str, Any]]:
+    """Fetch actual destination history ending at a PR's merge commit."""
+    merge_commit = pull_request.get("mergeCommit")
+    if merge_commit is None:
+        raise RuntimeError(f"Merged PR has no merge commit: {pull_request['url']}")
+    history = _fetch_object_history(
+        pull_request["repository"],
+        merge_commit["oid"],
+        count,
+        pull_request["url"],
+    )
+    if not history or history[0]["oid"] != merge_commit["oid"]:
+        raise RuntimeError(f"PR merge history has wrong head: {pull_request['url']}")
+    return history
+
+
+def _same_authored_change(source: dict[str, Any], actual: dict[str, Any]) -> bool:
+    """Match a rebased commit using author metadata preserved by Git."""
+    source_author = source.get("author") or {}
+    actual_author = actual.get("author") or {}
+    return (
+        source.get("message") == actual.get("message")
+        and source.get("authoredDate") == actual.get("authoredDate")
+        and (source_author.get("email") or "").casefold()
+        == (actual_author.get("email") or "").casefold()
+    )
+
+
+def _reconstruct_pr_authored_commits(
+    pull_request: PullRequestInfo,
+) -> list[AuthoredCommitInfo]:
+    """Map one merged PR to the commits that actually landed upstream."""
+    merge_commit = pull_request.get("mergeCommit")
+    commit_connection = pull_request.get("commits")
+    if merge_commit is None or commit_connection is None:
+        raise RuntimeError(f"PR has incomplete merge data: {pull_request['url']}")
+    if (
+        commit_connection["pageInfo"]["hasNextPage"]
+        or len(commit_connection["nodes"]) != commit_connection["totalCount"]
+    ):
+        raise RuntimeError(f"PR has incomplete commit list: {pull_request['url']}")
+
+    source_commits = [node["commit"] for node in commit_connection["nodes"]]
+    if not source_commits:
+        raise RuntimeError(f"Merged PR has no source commits: {pull_request['url']}")
+
+    parent_count = merge_commit["parents"]["totalCount"]
+    if parent_count >= 2:
+        parent_nodes = merge_commit["parents"].get("nodes", [])
+        if len(parent_nodes) != parent_count:
+            raise RuntimeError(f"PR has incomplete parent list: {pull_request['url']}")
+        newest_first = _fetch_object_history(
+            pull_request["repository"],
+            parent_nodes[-1]["oid"],
+            len(source_commits),
+            pull_request["url"],
+        )
+        if len(newest_first) != len(source_commits):
+            raise RuntimeError(f"Incomplete PR parent history: {pull_request['url']}")
+        oldest_first = list(reversed(newest_first))
+        if not all(
+            source["oid"] == actual["oid"] or _same_authored_change(source, actual)
+            for source, actual in zip(source_commits, oldest_first, strict=True)
+        ):
+            raise RuntimeError(
+                f"Ambiguous PR merge parent history: {pull_request['url']}"
+            )
+        actual_commits = [*oldest_first, merge_commit]
+    elif len(source_commits) == 1:
+        actual_commits = [merge_commit]
+    else:
+        newest_first = _fetch_merge_history(pull_request, len(source_commits))
+        if len(newest_first) != len(source_commits):
+            raise RuntimeError(f"Incomplete PR merge history: {pull_request['url']}")
+        oldest_first = list(reversed(newest_first))
+        matches = [
+            _same_authored_change(source, actual)
+            for source, actual in zip(source_commits, oldest_first, strict=True)
+        ]
+        if all(matches):
+            actual_commits = oldest_first
+        elif any(matches):
+            raise RuntimeError(f"Ambiguous PR merge strategy: {pull_request['url']}")
+        else:
+            actual_commits = [merge_commit]
+
+    branch = pull_request["baseRefName"]
+    authored = [
+        converted
+        for commit in actual_commits
+        if (converted := _to_authored_commit(commit, branch, reconstructed=True))
+        is not None
+    ]
+    return _deduplicate_commits(authored)
+
+
+def _deduplicate_commits(
+    commits: list[AuthoredCommitInfo],
+) -> list[AuthoredCommitInfo]:
+    """Deduplicate commits by OID while preserving every containing branch."""
+    by_oid: dict[str, AuthoredCommitInfo] = {}
+    for commit in commits:
+        previous = by_oid.get(commit["oid"])
+        if previous is None:
+            by_oid[commit["oid"]] = {
+                **commit,
+                "branches": sorted(set(commit["branches"])),
             }
+            continue
+        by_oid[commit["oid"]] = {
+            **previous,
+            "branches": sorted({*previous["branches"], *commit["branches"]}),
+            "coauthorOnly": previous.get("coauthorOnly", False)
+            and commit.get("coauthorOnly", False),
+            "requiresDetail": previous.get("requiresDetail", False)
+            or commit.get("requiresDetail", False),
+        }
+    return [by_oid[oid] for oid in sorted(by_oid)]
+
+
+def fetch_authored_commit_contributions(
+    prs: list[PullRequestInfo],
+    now: datetime | None = None,
+) -> dict[str, CommitRepositoryInfo]:
+    """Count actual user-authored commits on relevant upstream branches."""
+    account = _fetch_account_info()
+    ended_at = now or datetime.now(UTC)
+    started_at = _parse_github_datetime(account["createdAt"])
+    candidates = _discover_contribution_repositories(started_at, ended_at)
+    branches: dict[str, set[str]] = {}
+
+    for name, repository in candidates.items():
+        default_ref = repository["defaultBranchRef"]
+        if default_ref is not None:
+            branches.setdefault(name, set()).add(default_ref["name"])
+
+    for pr in prs:
+        repository = pr["repository"]
+        if not _is_external_public_repository(repository):
+            continue
+        name = repository["nameWithOwner"]
+        candidates[name] = repository
+        repo_branches = branches.setdefault(name, set())
+        default_ref = repository["defaultBranchRef"]
+        if default_ref is not None:
+            repo_branches.add(default_ref["name"])
+        repo_branches.add(pr["baseRefName"])
+
+    repositories: dict[str, CommitRepositoryInfo] = {}
+    missing_branches: set[tuple[str, str]] = set()
+    for name, repository in candidates.items():
+        authored_commits: list[AuthoredCommitInfo] = []
+        default_ref = repository["defaultBranchRef"]
+        default_branch = default_ref["name"] if default_ref is not None else None
+        for branch in sorted(branches.get(name, set())):
+            branch_commits = _fetch_branch_authored_commits(
+                repository, branch, account["id"]
+            )
+            if branch_commits is None:
+                missing_branches.add((name, branch))
+                continue
+            authored_commits.extend(branch_commits)
+            authored_commits.extend(
+                _fetch_branch_coauthored_commits(
+                    repository,
+                    branch,
+                    account,
+                    is_default_branch=branch == default_branch,
+                )
+            )
+        authored_commits.extend(
+            commit
+            for pull_request in prs
+            if pull_request["repository"]["nameWithOwner"] == name
+            if (
+                pull_request["repository"]["nameWithOwner"],
+                pull_request["baseRefName"],
+            )
+            in missing_branches
+            for commit in _reconstruct_pr_authored_commits(pull_request)
+        )
+        repositories[name] = {
+            "commits": _deduplicate_commits(authored_commits),
+            "stars": repository["stargazerCount"],
+            "url": repository["url"],
+        }
 
     return repositories
 
@@ -351,15 +723,19 @@ def fetch_merged_prs() -> list[PullRequestInfo]:
     """Fetch all merged PRs using GitHub GraphQL API with pagination."""
     all_prs: list[PullRequestInfo] = []
     cursor = None
+    seen_cursors: set[str] = set()
 
     while True:
         data = _run_graphql(MERGED_PRS_QUERY, {"cursor": cursor})
         pr_data = data["data"]["user"]["pullRequests"]
         all_prs.extend(pr_data["nodes"])
 
-        if not pr_data["pageInfo"]["hasNextPage"]:
+        next_cursor = _next_page_cursor(
+            pr_data["pageInfo"], seen_cursors, "GitHub merged PR pagination"
+        )
+        if next_cursor is None:
             break
-        cursor = pr_data["pageInfo"]["endCursor"]
+        cursor = next_cursor
 
     return all_prs
 
@@ -367,230 +743,29 @@ def fetch_merged_prs() -> list[PullRequestInfo]:
 def fetch_open_pr_count() -> int:
     """Fetch total count of open PRs."""
     data = _run_graphql(OPEN_PRS_QUERY)
-    return data["data"]["user"]["pullRequests"]["totalCount"]
+    return cast(int, data["data"]["user"]["pullRequests"]["totalCount"])
 
 
-def group_by_repo(
-    prs: list[PullRequestInfo],
-    commit_repositories: dict[str, CommitRepositoryInfo],
-) -> dict[str, GroupedRepositoryInfo]:
-    """Union merged PR and authored commit contributions by repository."""
-    repos: dict[str, GroupedRepositoryInfo] = {
-        name: {
-            "prs": [],
-            "commits": info["commits"],
-            "stars": info["stars"],
-            "url": info["url"],
-        }
-        for name, info in commit_repositories.items()
-    }
-
-    for pr in prs:
-        repo = pr["repository"]
-        if not _is_external_public_repository(repo):
-            continue
-        name = repo["nameWithOwner"]
-        previous = repos.get(
-            name,
-            {"prs": [], "commits": 0, "stars": 0, "url": ""},
-        )
-        repos[name] = {
-            "prs": [*previous["prs"], pr],
-            "commits": previous["commits"],
-            "stars": repo["stargazerCount"],
-            "url": repo["url"],
-        }
-
-    # Sort by star count descending, then by name for deterministic ties.
-    return dict(
-        sorted(
-            repos.items(),
-            key=lambda item: (-item[1]["stars"], item[0].casefold()),
-        )
-    )
-
-
-def format_stars(count: int) -> str:
-    """Format star count with K suffix for readability."""
-    if count >= 1000:
-        return f"{count / 1000:.1f}k".replace(".0k", "k")
-    return str(count)
-
-
-def repo_anchor(name: str) -> str:
-    """Build a stable README anchor for a repository's PR details."""
-    slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
-    return f"merged-prs-{slug}"
-
-
-def sorted_prs(info: GroupedRepositoryInfo) -> list[PullRequestSummary]:
-    """Return repository PRs in newest-merged-first order."""
-    return sorted(info["prs"], key=lambda p: p["mergedAt"], reverse=True)
-
-
-def pr_number(pr: PullRequestSummary) -> str:
-    """Extract the PR number from a pull request URL."""
-    return pr["url"].split("/")[-1]
-
-
-def html_text(text: str) -> str:
-    """Normalize and escape untrusted text for a native HTML text node."""
-    return escape(" ".join(text.split()), quote=False)
-
-
-def markdown_text(text: str) -> str:
-    """Render untrusted text without allowing Markdown formatting."""
-    escaped = html_text(text)
-    for punctuation in MARKDOWN_PUNCTUATION:
-        escaped = escaped.replace(punctuation, f"\\{punctuation}")
-    return escaped
-
-
-def generate_table(repos: dict[str, GroupedRepositoryInfo]) -> str:
-    """Generate markdown table from grouped PRs."""
-    lines = [
-        "| Repository | Stars | Authored Commits | Merged PRs | PR Links |",
-        "|:-----------|------:|:----------------:|:----------:|:---------|",
-    ]
-
-    for name, info in repos.items():
-        pr_count = len(info["prs"])
-        stars = format_stars(info["stars"])
-        commits_url = f"{info['url']}/commits?author={USERNAME}"
-        commit_link = f"[{info['commits']}]({commits_url})"
-        # Keep large rows compact, but link to generated details instead of
-        # GitHub search because search can omit older transferred PRs.
-        if pr_count == 0:
-            pr_links = "—"
-        elif pr_count <= 3:
-            pr_links = ", ".join(
-                f"[#{pr_number(pr)}]({pr['url']})" for pr in sorted_prs(info)
-            )
-        else:
-            pr_links = f"[View all](#{repo_anchor(name)})"
-
-        repo_link = f"[{name}]({info['url']})"
-        lines.append(
-            f"| {repo_link} | {stars} | {commit_link} | {pr_count} | {pr_links} |"
-        )
-
-    return "\n".join(lines)
-
-
-def generate_pr_details(repos: dict[str, GroupedRepositoryInfo]) -> str:
-    """Generate complete PR details for repositories compacted in the table."""
-    detail_repos = [
-        (name, info) for name, info in repos.items() if len(info["prs"]) > 3
-    ]
-    if not detail_repos:
-        return ""
-
-    lines = ["### Merged PR Details", ""]
-    for name, info in detail_repos:
-        lines.extend(
-            [
-                f'<a id="{repo_anchor(name)}"></a>',
-                "<details>",
-                (
-                    f"<summary><strong>{html_text(name)} "
-                    f"({len(info['prs'])} merged PRs)</strong></summary>"
-                ),
-                "",
-            ]
-        )
-        for pr in sorted_prs(info):
-            lines.append(
-                f"- [#{pr_number(pr)}]({pr['url']}) - {markdown_text(pr['title'])}"
-            )
-        lines.extend(["", "</details>", ""])
-
-    return "\n".join(lines).rstrip()
-
-
-def generate_summary(
-    total_commits: int,
-    total_prs: int,
-    repo_count: int,
-    total_stars: int,
-    open_prs: int,
-) -> str:
-    """Generate summary line above the table."""
-    stars_str = format_stars(total_stars)
-    return (
-        f"> **{total_commits}** authored commits and **{total_prs}** merged PRs "
-        f"across **{repo_count}** external projects "
-        f"({stars_str}+ combined stars)"
-        f" · **{open_prs}** open PRs in review"
-    )
-
-
-def replace_section(readme: str, section: str, content: str) -> str:
-    """Replace content between START/END markers for a given section."""
-    start_marker = f"<!-- START_SECTION:{section} -->"
-    end_marker = f"<!-- END_SECTION:{section} -->"
-    if readme.count(start_marker) != 1 or readme.count(end_marker) != 1:
-        raise RuntimeError(f"Missing or duplicate generated section: {section}")
-    pattern = (
-        rf"({re.escape(start_marker)})\n"
-        r".*?"
-        rf"({re.escape(end_marker)})"
-    )
-
-    def replacement(match: re.Match[str]) -> str:
-        return f"{match.group(1)}\n{content}\n{match.group(2)}"
-
-    updated, replacement_count = re.subn(
-        pattern,
-        replacement,
-        readme,
-        flags=re.DOTALL,
-    )
-    if replacement_count != 1:
-        raise RuntimeError(f"Missing or duplicate generated section: {section}")
-    return updated
-
-
-def upsert_section_after(
-    readme: str,
-    section: str,
-    content: str,
-    after_section: str,
-) -> str:
-    """Replace a generated section or insert it after another generated section."""
-    start_marker = f"<!-- START_SECTION:{section} -->"
-    end_marker = f"<!-- END_SECTION:{after_section} -->"
-    block = f"{start_marker}\n{content}\n<!-- END_SECTION:{section} -->"
-
-    if start_marker in readme:
-        return replace_section(readme, section, content)
-    if readme.count(end_marker) != 1:
-        raise RuntimeError(f"Missing marker or duplicate marker: {end_marker}")
-    return readme.replace(end_marker, f"{end_marker}\n\n{block}", 1)
-
-
-def update_readme(summary: str, table: str, pr_details: str) -> None:
+def update_readme(
+    summary: str,
+    table: str,
+    commit_details: str,
+    pr_details: str,
+) -> None:
     """Replace dynamic sections in README.md."""
-    readme = README_PATH.read_text(encoding="utf-8")
-    readme = replace_section(readme, "summary", summary)
-    readme = replace_section(readme, "contributions", table)
-    readme = upsert_section_after(
-        readme,
-        "pr_details",
-        pr_details,
-        "contributions",
-    )
-    README_PATH.write_text(readme.rstrip() + "\n", encoding="utf-8")
+    write_readme_sections(README_PATH, summary, table, commit_details, pr_details)
 
 
 def main() -> None:
     prs = fetch_merged_prs()
-    commit_repositories = fetch_authored_commit_contributions()
+    commit_repositories = fetch_authored_commit_contributions(prs)
     open_prs = fetch_open_pr_count()
     repos = group_by_repo(prs, commit_repositories)
-    total_commits = sum(info["commits"] for info in repos.values())
+    total_commits = sum(len(info["commits"]) for info in repos.values())
     total_prs = sum(len(info["prs"]) for info in repos.values())
     total_stars = sum(info["stars"] for info in repos.values())
     table = generate_table(repos)
+    commit_details = generate_commit_details(repos)
     pr_details = generate_pr_details(repos)
     summary = generate_summary(
         total_commits,
@@ -599,7 +774,7 @@ def main() -> None:
         total_stars,
         open_prs,
     )
-    update_readme(summary, table, pr_details)
+    update_readme(summary, table, commit_details, pr_details)
     print(
         f"Updated README with {len(repos)} repositories, "
         f"{total_commits} authored commits, {total_prs} merged PRs, "
