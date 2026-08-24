@@ -89,6 +89,34 @@ def _pace_rest_request() -> None:
     _last_rest_request_at = now
 
 
+def _run_complete_search_page(
+    command: list[str],
+    repository_name: str,
+    page: int,
+) -> dict[str, Any]:
+    """Retry one commit-search page until GitHub returns complete results."""
+    for attempt in range(1, REST_MAX_ATTEMPTS + 1):
+        response = _run_rest(command)
+        if not response.get("incomplete_results"):
+            return response
+        if attempt == REST_MAX_ATTEMPTS:
+            raise RuntimeError(
+                "GitHub commit search remained incomplete for "
+                f"{repository_name} page {page} after {REST_MAX_ATTEMPTS} attempts"
+            )
+
+        delay = REST_INITIAL_RETRY_DELAY_SECONDS * 2 ** (attempt - 1)
+        print(
+            "GitHub commit search was incomplete for "
+            f"{repository_name} page {page} on attempt "
+            f"{attempt}/{REST_MAX_ATTEMPTS}. Retrying in {delay} seconds.",
+            file=sys.stderr,
+        )
+        time.sleep(delay)
+
+    raise AssertionError("Commit-search retry loop exited unexpectedly")
+
+
 def search_commits(
     repository_name: str,
     identity_emails: set[str],
@@ -102,7 +130,7 @@ def search_commits(
     page = 1
 
     while True:
-        response = _run_rest(
+        response = _run_complete_search_page(
             [
                 "gh",
                 "api",
@@ -115,12 +143,10 @@ def search_commits(
                 f"per_page={SEARCH_PAGE_SIZE}",
                 "-f",
                 f"page={page}",
-            ]
+            ],
+            repository_name,
+            page,
         )
-        if response.get("incomplete_results"):
-            raise RuntimeError(
-                f"GitHub commit search was incomplete for {repository_name}"
-            )
         total_count = response.get("total_count")
         page_items = response.get("items")
         if not isinstance(total_count, int) or not isinstance(page_items, list):

@@ -2,7 +2,7 @@ import json
 import subprocess  # nosec B404
 import unittest
 from types import SimpleNamespace
-from unittest.mock import patch
+from unittest.mock import call, patch
 
 import github_rest
 
@@ -56,16 +56,81 @@ class GitHubCommitSearchTest(unittest.TestCase):
         self.assertIn("page=1", first_command)
         self.assertIn("page=2", second_command)
 
-    def test_search_commits_rejects_incomplete_or_capped_results(self) -> None:
+    def test_search_commits_retries_incomplete_results_without_keeping_them(
+        self,
+    ) -> None:
+        incomplete_page = make_search_page(
+            1,
+            [{"sha": "partial"}],
+            incomplete=True,
+        )
+        complete_page = make_search_page(1, [{"sha": "complete"}])
+
         with (
             patch(
                 "github_rest.subprocess.run",
-                return_value=make_search_page(1, [], incomplete=True),
+                side_effect=[incomplete_page, complete_page],
+            ) as run,
+            patch("github_rest.time.sleep") as sleep,
+        ):
+            items = github_rest.search_commits(
+                "owner/repo",
+                {"person@example.com"},
+            )
+
+        self.assertEqual([{"sha": "complete"}], items)
+        self.assertEqual(2, run.call_count)
+        self.assertEqual(run.call_args_list[0].args[0], run.call_args_list[1].args[0])
+        sleep.assert_called_once_with(2)
+
+    def test_search_commits_retries_an_incomplete_later_page_once(self) -> None:
+        first_page_items: list[dict[str, object]] = [
+            {"sha": str(index)} for index in range(100)
+        ]
+        pages = [
+            make_search_page(101, first_page_items),
+            make_search_page(101, [{"sha": "partial"}], incomplete=True),
+            make_search_page(101, [{"sha": "100"}]),
+        ]
+
+        with (
+            patch("github_rest.subprocess.run", side_effect=pages) as run,
+            patch("github_rest.time.sleep") as sleep,
+        ):
+            items = github_rest.search_commits(
+                "owner/repo",
+                {"person@example.com"},
+            )
+
+        self.assertEqual(
+            [str(index) for index in range(101)],
+            [item["sha"] for item in items],
+        )
+        self.assertEqual(3, run.call_count)
+        self.assertIn("page=2", run.call_args_list[1].args[0])
+        self.assertEqual(run.call_args_list[1].args[0], run.call_args_list[2].args[0])
+        sleep.assert_called_once_with(2)
+
+    def test_search_commits_rejects_persistently_incomplete_results(self) -> None:
+        incomplete_page = make_search_page(1, [], incomplete=True)
+
+        with (
+            patch(
+                "github_rest.subprocess.run",
+                return_value=incomplete_page,
+            ) as run,
+            patch("github_rest.time.sleep") as sleep,
+            self.assertRaisesRegex(
+                RuntimeError,
+                "incomplete for owner/repo page 1 after 3 attempts",
             ),
-            self.assertRaisesRegex(RuntimeError, "incomplete"),
         ):
             github_rest.search_commits("owner/repo", {"person@example.com"})
 
+        self.assertEqual(3, run.call_count)
+        self.assertEqual([call(2), call(4)], sleep.call_args_list)
+
+    def test_search_commits_rejects_capped_results(self) -> None:
         with (
             patch(
                 "github_rest.subprocess.run",
