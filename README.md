@@ -12,22 +12,22 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **77** authored/co-authored commits and **61** merged PRs across **28** external projects (1457k+ combined stars) · **31** open PRs in review
+> **77** authored/co-authored commits and **61** merged PRs across **28** external projects (1458k+ combined stars) · **31** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | Authored / Co-authored Commits | Merged PRs | PR Links |
 |:-----------|------:|:----------------:|:----------:|:---------|
 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 388.7k | [2](https://github.com/openclaw/openclaw/commits/main?author=Lidang-Jiang) | 2 | [#56720](https://github.com/openclaw/openclaw/pull/56720), [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 246.7k | [14](https://github.com/affaan-m/ECC/commits/main?author=Lidang-Jiang) | 5 | [View all](#merged-prs-affaan-m-ecc) |
-| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 240.5k | [1](https://github.com/NousResearch/hermes-agent/commits/main?author=Lidang-Jiang) | 0 | — |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 246.9k | [14](https://github.com/affaan-m/ECC/commits/main?author=Lidang-Jiang) | 5 | [View all](#merged-prs-affaan-m-ecc) |
+| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 240.6k | [1](https://github.com/NousResearch/hermes-agent/commits/main?author=Lidang-Jiang) | 0 | — |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 164.7k | [1](https://github.com/huggingface/transformers/commits/main?author=Lidang-Jiang) | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
-| [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 125.9k | [7](https://github.com/kubernetes/kubernetes/commits/master?author=Lidang-Jiang) | 3 | [#138082](https://github.com/kubernetes/kubernetes/pull/138082), [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
+| [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 126.3k | [7](https://github.com/kubernetes/kubernetes/commits/master?author=Lidang-Jiang) | 3 | [#138082](https://github.com/kubernetes/kubernetes/pull/138082), [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 90.9k | [1](https://github.com/vllm-project/vllm/commits/main?author=Lidang-Jiang) | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 38.1k | [2](https://github.com/docker/compose/commits/main?author=Lidang-Jiang) | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
-| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 33.7k | [2](https://github.com/sgl-project/sglang/commits/main?author=Lidang-Jiang) | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
+| [sgl-project/sglang](https://github.com/sgl-project/sglang) | 33.9k | [2](https://github.com/sgl-project/sglang/commits/main?author=Lidang-Jiang) | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
 | [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 29.9k | [6](https://github.com/Genesis-Embodied-AI/genesis-world/commits/main?author=Lidang-Jiang) | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
-| [modelscope/FunASR](https://github.com/modelscope/FunASR) | 20.1k | [1](https://github.com/modelscope/FunASR/commits/main?author=Lidang-Jiang) | 1 | [#2840](https://github.com/modelscope/FunASR/pull/2840) |
+| [modelscope/FunASR](https://github.com/modelscope/FunASR) | 20.2k | [1](https://github.com/modelscope/FunASR/commits/main?author=Lidang-Jiang) | 1 | [#2840](https://github.com/modelscope/FunASR/pull/2840) |
 | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 12.5k | [1](https://github.com/Farama-Foundation/Gymnasium/commits/main?author=Lidang-Jiang) | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 10k | [1](https://github.com/OpenRLHF/OpenRLHF/commits/main?author=Lidang-Jiang) | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
 | [apify/crawlee-python](https://github.com/apify/crawlee-python) | 9.5k | [1](https://github.com/apify/crawlee-python/commits/master?author=Lidang-Jiang) | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
@@ -43,7 +43,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [microsoft/Olive](https://github.com/microsoft/Olive) | 2.4k | [1](https://github.com/microsoft/Olive/commits/main?author=Lidang-Jiang) | 1 | [#2380](https://github.com/microsoft/Olive/pull/2380) |
 | [FreeOpcUa/opcua-asyncio](https://github.com/FreeOpcUa/opcua-asyncio) | 1.5k | [4](https://github.com/FreeOpcUa/opcua-asyncio/commits/master?author=Lidang-Jiang) | 4 | [View all](#merged-prs-freeopcua-opcua-asyncio) |
 | [ros2/rclcpp](https://github.com/ros2/rclcpp) | 798 | [1](https://github.com/ros2/rclcpp/commits/jazzy?author=Lidang-Jiang) | 1 | [#3139](https://github.com/ros2/rclcpp/pull/3139) |
-| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 456 | [8](#authored-commits-baidu-vllm-kunlun) | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
+| [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 457 | [8](#authored-commits-baidu-vllm-kunlun) | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
 | [ros2/launch](https://github.com/ros2/launch) | 155 | [1](https://github.com/ros2/launch/commits/rolling?author=Lidang-Jiang) | 1 | [#969](https://github.com/ros2/launch/pull/969) |
 | [ros2/launch_ros](https://github.com/ros2/launch_ros) | 82 | [1](https://github.com/ros2/launch_ros/commits/rolling?author=Lidang-Jiang) | 1 | [#538](https://github.com/ros2/launch_ros/pull/538) |
 <!-- END_SECTION:contributions -->
