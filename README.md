@@ -12,18 +12,18 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **77** authored/co-authored commits and **61** merged PRs across **28** external projects (1475.1k+ combined stars) · **30** open PRs in review
+> **77** authored/co-authored commits and **61** merged PRs across **28** external projects (1475.8k+ combined stars) · **30** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | Authored / Co-authored Commits | Merged PRs | PR Links |
 |:-----------|------:|:----------------:|:----------:|:---------|
 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 389.4k | [2](https://github.com/openclaw/openclaw/commits/main?author=Lidang-Jiang) | 2 | [#56720](https://github.com/openclaw/openclaw/pull/56720), [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 255.8k | [14](https://github.com/affaan-m/ECC/commits/main?author=Lidang-Jiang) | 5 | [View all](#merged-prs-affaan-m-ecc) |
-| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 244.2k | [1](https://github.com/NousResearch/hermes-agent/commits/main?author=Lidang-Jiang) | 0 | — |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 256k | [14](https://github.com/affaan-m/ECC/commits/main?author=Lidang-Jiang) | 5 | [View all](#merged-prs-affaan-m-ecc) |
+| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 244.3k | [1](https://github.com/NousResearch/hermes-agent/commits/main?author=Lidang-Jiang) | 0 | — |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 165.1k | [1](https://github.com/huggingface/transformers/commits/main?author=Lidang-Jiang) | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
-| [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 126.9k | [7](https://github.com/kubernetes/kubernetes/commits/master?author=Lidang-Jiang) | 3 | [#138082](https://github.com/kubernetes/kubernetes/pull/138082), [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
-| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 91.4k | [1](https://github.com/vllm-project/vllm/commits/main?author=Lidang-Jiang) | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
+| [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 127.3k | [7](https://github.com/kubernetes/kubernetes/commits/master?author=Lidang-Jiang) | 3 | [#138082](https://github.com/kubernetes/kubernetes/pull/138082), [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
+| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 91.5k | [1](https://github.com/vllm-project/vllm/commits/main?author=Lidang-Jiang) | 1 | [#38099](https://github.com/vllm-project/vllm/pull/38099) |
 | [docker/compose](https://github.com/docker/compose) | 38.1k | [2](https://github.com/docker/compose/commits/main?author=Lidang-Jiang) | 1 | [#13684](https://github.com/docker/compose/pull/13684) |
 | [sgl-project/sglang](https://github.com/sgl-project/sglang) | 35.8k | [2](https://github.com/sgl-project/sglang/commits/main?author=Lidang-Jiang) | 2 | [#21400](https://github.com/sgl-project/sglang/pull/21400), [#21399](https://github.com/sgl-project/sglang/pull/21399) |
 | [Genesis-Embodied-AI/genesis-world](https://github.com/Genesis-Embodied-AI/genesis-world) | 29.9k | [6](https://github.com/Genesis-Embodied-AI/genesis-world/commits/main?author=Lidang-Jiang) | 6 | [View all](#merged-prs-genesis-embodied-ai-genesis-world) |
@@ -36,7 +36,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [rllm-org/rllm](https://github.com/rllm-org/rllm) | 5.8k | [2](https://github.com/rllm-org/rllm/commits/main?author=Lidang-Jiang) | 1 | [#480](https://github.com/rllm-org/rllm/pull/480) |
 | [pytorch/executorch](https://github.com/pytorch/executorch) | 5k | [3](https://github.com/pytorch/executorch/commits/main?author=Lidang-Jiang) | 3 | [#18700](https://github.com/pytorch/executorch/pull/18700), [#18703](https://github.com/pytorch/executorch/pull/18703), [#18701](https://github.com/pytorch/executorch/pull/18701) |
 | [Lightning-AI/LitServe](https://github.com/Lightning-AI/LitServe) | 3.9k | [2](https://github.com/Lightning-AI/LitServe/commits/main?author=Lidang-Jiang) | 2 | [#673](https://github.com/Lightning-AI/LitServe/pull/673), [#674](https://github.com/Lightning-AI/LitServe/pull/674) |
-| [pytorch/rl](https://github.com/pytorch/rl) | 3.5k | [1](https://github.com/pytorch/rl/commits/main?author=Lidang-Jiang) | 1 | [#3593](https://github.com/pytorch/rl/pull/3593) |
+| [pytorch/rl](https://github.com/pytorch/rl) | 3.6k | [1](https://github.com/pytorch/rl/commits/main?author=Lidang-Jiang) | 1 | [#3593](https://github.com/pytorch/rl/pull/3593) |
 | [Farama-Foundation/HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv) | 3.3k | [2](#authored-commits-farama-foundation-highwayenv) | 2 | [#667](https://github.com/Farama-Foundation/HighwayEnv/pull/667), [#668](https://github.com/Farama-Foundation/HighwayEnv/pull/668) |
 | [mani-skill/ManiSkill](https://github.com/mani-skill/ManiSkill) | 3.3k | [2](https://github.com/mani-skill/ManiSkill/commits/main?author=Lidang-Jiang) | 2 | [#1403](https://github.com/mani-skill/ManiSkill/pull/1403), [#1402](https://github.com/mani-skill/ManiSkill/pull/1402) |
 | [pytorch/ao](https://github.com/pytorch/ao) | 3k | [1](https://github.com/pytorch/ao/commits/main?author=Lidang-Jiang) | 1 | [#4242](https://github.com/pytorch/ao/pull/4242) |
