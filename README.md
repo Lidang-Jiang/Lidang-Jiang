@@ -12,14 +12,14 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 ### Open Source Contributions
 
 <!-- START_SECTION:summary -->
-> **77** authored/co-authored commits and **61** merged PRs across **28** external projects (1496.5k+ combined stars) · **30** open PRs in review
+> **77** authored/co-authored commits and **61** merged PRs across **28** external projects (1496.8k+ combined stars) · **30** open PRs in review
 <!-- END_SECTION:summary -->
 
 <!-- START_SECTION:contributions -->
 | Repository | Stars | Authored / Co-authored Commits | Merged PRs | PR Links |
 |:-----------|------:|:----------------:|:----------:|:---------|
 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 390.4k | [2](https://github.com/openclaw/openclaw/commits/main?author=Lidang-Jiang) | 2 | [#56720](https://github.com/openclaw/openclaw/pull/56720), [#66285](https://github.com/openclaw/openclaw/pull/66285) |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 266.4k | [14](https://github.com/affaan-m/ECC/commits/main?author=Lidang-Jiang) | 5 | [View all](#merged-prs-affaan-m-ecc) |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC) | 266.6k | [14](https://github.com/affaan-m/ECC/commits/main?author=Lidang-Jiang) | 5 | [View all](#merged-prs-affaan-m-ecc) |
 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 248.6k | [1](https://github.com/NousResearch/hermes-agent/commits/main?author=Lidang-Jiang) | 0 | — |
 | [huggingface/transformers](https://github.com/huggingface/transformers) | 166.6k | [1](https://github.com/huggingface/transformers/commits/main?author=Lidang-Jiang) | 1 | [#45045](https://github.com/huggingface/transformers/pull/45045) |
 | [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 127.9k | [7](https://github.com/kubernetes/kubernetes/commits/master?author=Lidang-Jiang) | 3 | [#138082](https://github.com/kubernetes/kubernetes/pull/138082), [#138077](https://github.com/kubernetes/kubernetes/pull/138077), [#138080](https://github.com/kubernetes/kubernetes/pull/138080) |
@@ -31,7 +31,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [Farama-Foundation/Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | 12.6k | [1](https://github.com/Farama-Foundation/Gymnasium/commits/main?author=Lidang-Jiang) | 1 | [#1553](https://github.com/Farama-Foundation/Gymnasium/pull/1553) |
 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 10k | [1](https://github.com/OpenRLHF/OpenRLHF/commits/main?author=Lidang-Jiang) | 1 | [#1212](https://github.com/OpenRLHF/OpenRLHF/pull/1212) |
 | [apify/crawlee-python](https://github.com/apify/crawlee-python) | 9.5k | [1](https://github.com/apify/crawlee-python/commits/master?author=Lidang-Jiang) | 1 | [#1835](https://github.com/apify/crawlee-python/pull/1835) |
-| [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 7k | [5](#authored-commits-vllm-project-vllm-omni) | 4 | [View all](#merged-prs-vllm-project-vllm-omni) |
+| [vllm-project/vllm-omni](https://github.com/vllm-project/vllm-omni) | 7.1k | [5](#authored-commits-vllm-project-vllm-omni) | 4 | [View all](#merged-prs-vllm-project-vllm-omni) |
 | [open-edge-platform/anomalib](https://github.com/open-edge-platform/anomalib) | 6.2k | [3](https://github.com/open-edge-platform/anomalib/commits/main?author=Lidang-Jiang) | 3 | [#3509](https://github.com/open-edge-platform/anomalib/pull/3509), [#3508](https://github.com/open-edge-platform/anomalib/pull/3508), [#3512](https://github.com/open-edge-platform/anomalib/pull/3512) |
 | [rllm-org/rllm](https://github.com/rllm-org/rllm) | 5.8k | [2](https://github.com/rllm-org/rllm/commits/main?author=Lidang-Jiang) | 1 | [#480](https://github.com/rllm-org/rllm/pull/480) |
 | [pytorch/executorch](https://github.com/pytorch/executorch) | 5.1k | [3](https://github.com/pytorch/executorch/commits/main?author=Lidang-Jiang) | 3 | [#18700](https://github.com/pytorch/executorch/pull/18700), [#18703](https://github.com/pytorch/executorch/pull/18703), [#18701](https://github.com/pytorch/executorch/pull/18701) |
@@ -45,7 +45,7 @@ MLsys Engineer passionate about using AI to build everything — from inference 
 | [ros2/rclcpp](https://github.com/ros2/rclcpp) | 806 | [1](https://github.com/ros2/rclcpp/commits/jazzy?author=Lidang-Jiang) | 1 | [#3139](https://github.com/ros2/rclcpp/pull/3139) |
 | [baidu/vLLM-Kunlun](https://github.com/baidu/vLLM-Kunlun) | 472 | [8](#authored-commits-baidu-vllm-kunlun) | 9 | [View all](#merged-prs-baidu-vllm-kunlun) |
 | [ros2/launch](https://github.com/ros2/launch) | 155 | [1](https://github.com/ros2/launch/commits/rolling?author=Lidang-Jiang) | 1 | [#969](https://github.com/ros2/launch/pull/969) |
-| [ros2/launch_ros](https://github.com/ros2/launch_ros) | 83 | [1](https://github.com/ros2/launch_ros/commits/rolling?author=Lidang-Jiang) | 1 | [#538](https://github.com/ros2/launch_ros/pull/538) |
+| [ros2/launch_ros](https://github.com/ros2/launch_ros) | 84 | [1](https://github.com/ros2/launch_ros/commits/rolling?author=Lidang-Jiang) | 1 | [#538](https://github.com/ros2/launch_ros/pull/538) |
 <!-- END_SECTION:contributions -->
 
 <!-- START_SECTION:commit_details -->
